@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRINXS | Inteligência Operacional</title>
+<meta name="description" content="Clareza, controle e eficiência para sua empresa. A TRINXS integra operação, gestão e tecnologia para transformar empresas desestruturadas em sistemas claros, controláveis e eficientes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TRINXS — WEBSITE v4.0
+   Brand green: #63D448  |  Dark bg: #070B08
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:#070B08;color:#E9EEE9;overflow-x:hidden;line-height:1.6}
+:root{
+  --g:#63D448;
+  --g2:#4BB835;
+  --g3:#368522;
+  --gdim:rgba(99,212,72,0.12);
+  --gbright:rgba(99,212,72,0.28);
+  --s1:#0C1109;
+  --s2:#111608;
+  --s3:#192010;
+  --border:rgba(99,212,72,0.10);
+  --bhi:rgba(99,212,72,0.26);
+  --muted:#6E8C60;
+  --dim:#3E5430;
+  --ff:'Syne',sans-serif;
+  --r:12px;
+  --rl:20px;
+  /* Alert palette */
+  --al-green:#63D448;
+  --al-yellow:#F5C842;
+  --al-orange:#F08030;
+  --al-red:#E84545;
+  --al-blue:#4A9EE8;
+  --al-purple:#9B6FE8;
+}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#070B08}
+::-webkit-scrollbar-thumb{background:var(--g3);border-radius:2px}
+/* Grain */
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;padding:0 52px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,11,8,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:background .3s}
+.nav-logo{display:flex;align-items:center;gap:0;text-decoration:none}
+.nav-logo-wrap{position:relative;height:34px;display:flex;align-items:center}
+.nav-logo-img{height:32px;width:auto;object-fit:contain}
+.nav-sub{font-size:8.5px;font-weight:400;letter-spacing:2.5px;color:var(--muted);font-family:'DM Sans',sans-serif;text-transform:uppercase;white-space:nowrap;margin-left:10px;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{text-decoration:none;font-size:13px;color:var(--muted);padding:7px 15px;border-radius:7px;transition:all .2s;letter-spacing:.2px}
+.nav-links a:hover{color:#E9EEE9;background:var(--s3)}
+.nav-cta{background:var(--g)!important;color:#050A04!important;font-weight:600!important;padding:8px 22px!important;border-radius:8px!important;letter-spacing:.3px!important}
+.nav-cta:hover{background:var(--g2)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(99,212,72,.3)!important}
+.nav-burger{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:7px 11px;color:#E9EEE9;cursor:pointer;font-size:17px}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:120px 52px 80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 62% 38%,rgba(58,140,30,.11) 0%,transparent 68%),radial-gradient(ellipse 35% 35% at 82% 78%,rgba(99,212,72,.05) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(99,212,72,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(99,212,72,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,#000 20%,transparent 100%)}
+.hero-inner{position:relative;max-width:1240px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.htag{display:inline-flex;align-items:center;gap:8px;background:var(--s3);border:1px solid var(--bhi);border-radius:20px;padding:6px 16px;font-size:11.5px;color:var(--g);font-weight:500;letter-spacing:.8px;margin-bottom:24px;animation:fadeUp .6s ease both}
+.htag::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;animation:pdot 2s ease-in-out infinite}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
+.hero-h1{font-family:var(--ff);font-size:clamp(44px,5.2vw,72px);font-weight:800;line-height:1.04;letter-spacing:-1.5px;margin-bottom:6px;animation:fadeUp .6s .1s ease both}
+.hero-h1 em{font-style:normal;color:var(--g)}
+.hero-h1 .dim{color:var(--muted);font-weight:400}
+.hero-lead{font-size:17.5px;font-weight:300;color:var(--muted);line-height:1.7;max-width:480px;margin-bottom:40px;animation:fadeUp .6s .2s ease both}
+.hero-lead strong{color:#E9EEE9;font-weight:400}
+.hero-btns{display:flex;gap:14px;animation:fadeUp .6s .3s ease both;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#040904;font-size:14px;font-weight:700;padding:14px 28px;border-radius:var(--r);text-decoration:none;transition:all .22s;letter-spacing:.3px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-p:hover{background:var(--g2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(99,212,72,.32)}
+.btn-p svg{width:15px;height:15px;flex-shrink:0}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#E9EEE9;font-size:14px;font-weight:400;padding:14px 24px;border-radius:var(--r);text-decoration:none;border:1px solid var(--bhi);transition:all .22s}
+.btn-s:hover{background:var(--s3);border-color:var(--g)}
+.hero-visual{animation:fadeUp .6s .35s ease both}
+
+/* ── DASHBOARD CARD ── */
+.dash-card{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:26px;position:relative;overflow:hidden}
+.dash-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+.dash-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.dash-ttl{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:1.2px}
+.dash-live{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--g)}
+.dash-live::before{content:'';width:5px;height:5px;background:var(--g);border-radius:50%;animation:pdot 1.5s ease-in-out infinite}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.kpi{background:var(--s3);border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;text-align:center;transition:border-color .2s}
+.kpi:hover{border-color:var(--bhi)}
+.kpi-v{font-family:var(--ff);font-size:23px;font-weight:700;color:var(--g);line-height:1;margin-bottom:3px}
+.kpi-l{font-size:10px;color:var(--muted);letter-spacing:.4px}
+.kpi-d{font-size:10px;color:#86E84A;margin-top:2px}
+.chart-box{background:var(--s3);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:14px}
+.chart-lbl{font-size:10.5px;color:var(--muted);margin-bottom:11px}
+.sparksvg{width:100%;height:58px}
+.alerts{display:flex;flex-direction:column;gap:7px}
+.al{display:flex;align-items:center;gap:9px;background:var(--s3);border-radius:8px;padding:9px 13px;font-size:12px;border:1px solid transparent;transition:border-color .2s}
+.al:hover{border-color:var(--border)}
+.al-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.al-t{color:#E9EEE9;flex:1;font-size:11.5px}
+.al-time{color:var(--dim);font-size:10.5px}
+
+/* ── SECTION BASE ── */
+section{padding:104px 52px}
+.ctr{max-width:1240px;margin:0 auto}
+.eyebrow{font-size:10.5px;font-weight:500;letter-spacing:2.2px;color:var(--g);margin-bottom:14px;display:flex;align-items:center;gap:10px;text-transform:uppercase}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--g)}
+h2.sh{font-family:var(--ff);font-size:clamp(32px,4vw,54px);font-weight:700;line-height:1.08;letter-spacing:-.5px;margin-bottom:16px}
+h2.sh em{font-style:normal;color:var(--g)}
+.lead{font-size:17px;font-weight:300;color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:60px}
+.lead strong{color:#E9EEE9;font-weight:400}
+.sdiv{height:1px;background:linear-gradient(90deg,transparent,var(--bhi),transparent)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+/* ── SOBRE ── */
+#sobre{background:var(--s1)}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-stmt{font-family:var(--ff);font-size:30px;font-weight:600;line-height:1.28;margin-bottom:26px}
+.about-stmt em{font-style:normal;color:var(--g)}
+.about-body{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:18px}
+.about-body strong{color:#E9EEE9;font-weight:500}
+.val-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:26px}
+.val-item{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--muted);padding:13px 16px;background:var(--s3);border:1px solid var(--border);border-radius:10px;transition:all .25s}
+.val-item:hover{border-color:var(--bhi);transform:translateX(4px)}
+.vi-icon{width:22px;height:22px;background:var(--gdim);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.vi-icon svg{width:12px;height:12px;color:var(--g)}
+.vi-text strong{display:block;font-size:13px;font-weight:600;color:#E9EEE9;margin-bottom:2px}
+.tri-col{display:flex;flex-direction:column;gap:11px}
+.tc{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:22px;transition:all .3s;position:relative;overflow:hidden;cursor:default}
+.tc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--g);transform:scaleY(0);transition:transform .35s;transform-origin:bottom}
+.tc:hover::before{transform:scaleY(1)}
+.tc:hover{border-color:var(--bhi);transform:translateX(5px)}
+.tc-h{display:flex;align-items:center;gap:12px;margin-bottom:9px}
+.tc-n{font-family:var(--ff);font-size:13px;font-weight:700;color:var(--g);width:28px;height:28px;background:var(--gdim);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tc-name{font-family:var(--ff);font-size:15px;font-weight:600}
+.tc-desc{font-size:13px;color:var(--muted);line-height:1.65}
+.tc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tctag{font-size:10px;color:var(--g);background:var(--gdim);border:1px solid rgba(99,212,72,.18);padding:3px 9px;border-radius:4px}
+
+/* ── DIAGNÓSTICO ── */
+#diagnostico{background:#070B08}
+.diag-g{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:start}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:all .2s}
+.step:last-child{border-bottom:none}
+.step-n{font-family:var(--ff);font-size:42px;font-weight:800;color:var(--s3);line-height:1;min-width:52px;transition:color .3s}
+.step.active .step-n,.step:hover .step-n{color:var(--g)}
+.step-c{opacity:.55;transition:opacity .2s}
+.step.active .step-c,.step:hover .step-c{opacity:1}
+.step-title{font-family:var(--ff);font-size:18px;font-weight:600;margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.65}
+.step-tag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;color:var(--g);margin-top:9px}
+.step-tag::before{content:'▸'}
+.detail-area{position:sticky;top:96px}
+.detail{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:34px;display:none}
+.detail.active{display:block;animation:fadeUp .3s ease}
+.d-phase{font-size:10px;font-weight:500;letter-spacing:2px;color:var(--g);margin-bottom:12px;text-transform:uppercase}
+.d-title{font-family:var(--ff);font-size:28px;font-weight:700;margin-bottom:16px}
+.d-body{font-size:14px;color:var(--muted);line-height:1.82;margin-bottom:20px}
+.d-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.d-list li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted)}
+.d-list li::before{content:'→';color:var(--g);flex-shrink:0}
+.d-result{margin-top:20px;background:var(--gdim);border:1px solid rgba(99,212,72,.18);border-radius:10px;padding:14px 16px;font-size:13px;color:var(--g)}
+.d-result strong{display:block;font-size:10px;letter-spacing:1.2px;margin-bottom:4px;color:#86E84A;text-transform:uppercase}
+
+/* ── MÉTODO ── */
+#metodo{background:var(--s1)}
+.met-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:56px;align-items:start}
+.deic{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.dc{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:24px 20px;position:relative;overflow:hidden;transition:all .3s}
+.dc:hover{border-color:var(--bhi);transform:translateY(-5px);box-shadow:0 22px 44px rgba(0,0,0,.35)}
+.dc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transition:transform .35s}
+.dc:hover::after{transform:scaleX(1)}
+.dc-letter{font-family:var(--ff);font-size:54px;font-weight:800;color:var(--s3);line-height:1;margin-bottom:11px;transition:color .3s}
+.dc:hover .dc-letter{color:var(--g)}
+.dc-word{font-family:var(--ff);font-size:16px;font-weight:600;margin-bottom:8px}
+.dc-desc{font-size:12.5px;color:var(--muted);line-height:1.72}
+.dc-tag{font-size:10.5px;color:var(--g);margin-top:12px;font-style:italic}
+
+/* ── PLATAFORMA ── */
+#plataforma{background:#070B08;position:relative;overflow:hidden}
+#plataforma::before{content:'';position:absolute;top:-180px;right:-180px;width:580px;height:580px;background:radial-gradient(ellipse,rgba(58,140,30,.09) 0%,transparent 70%);pointer-events:none}
+.plat-hdr{text-align:center;margin-bottom:56px}
+.plat-hdr .eyebrow{justify-content:center}
+.plat-hdr .eyebrow::before{display:none}
+.plat-hdr .lead{margin:0 auto;text-align:center}
+
+/* OS Mockup */
+.os{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;max-width:940px;margin:0 auto 56px;box-shadow:0 48px 96px rgba(0,0,0,.55)}
+.os-bar{background:var(--s3);padding:12px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border)}
+.os-dots{display:flex;gap:6px}
+.os-dots span{width:10px;height:10px;border-radius:50%}
+.os-dots span:nth-child(1){background:#E84545}
+.os-dots span:nth-child(2){background:#F5C842}
+.os-dots span:nth-child(3){background:var(--g)}
+.os-url{flex:1;background:var(--s2);border-radius:5px;padding:6px 12px;font-size:12px;color:var(--dim);font-family:monospace;text-align:center}
+.os-live{font-size:10.5px;color:var(--g);display:flex;align-items:center;gap:5px}
+.os-live::before{content:'';width:5px;height:5px;background:var(--g);border-radius:50%;animation:pdot 1.4s ease-in-out infinite}
+.os-body{display:grid;grid-template-columns:196px 1fr;min-height:440px}
+.os-side{background:var(--s3);border-right:1px solid var(--border);padding:18px 10px}
+.os-side-hdr{font-size:10px;font-weight:500;color:var(--dim);letter-spacing:1.2px;margin-bottom:14px;padding:0 8px;text-transform:uppercase}
+.sni{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:7px;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all .2s;margin-bottom:2px}
+.sni svg{width:13px;height:13px;flex-shrink:0}
+.sni:hover{background:var(--s2);color:#E9EEE9}
+.sni.act{background:var(--gdim);color:var(--g);border:1px solid rgba(99,212,72,.18)}
+.os-main{padding:24px}
+.os-mhdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.os-mtitle{font-family:var(--ff);font-size:18px;font-weight:600}
+.os-mmeta{font-size:11.5px;color:var(--muted)}
+.os-mmeta span{color:var(--g)}
+.os-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:18px}
+.os-kpi{background:var(--s3);border:1px solid var(--border);border-radius:var(--r);padding:14px;transition:border-color .2s}
+.os-kpi:hover{border-color:var(--bhi)}
+.os-kv{font-family:var(--ff);font-size:24px;font-weight:700;line-height:1}
+.os-kl{font-size:10.5px;color:var(--muted);margin-top:3px}
+.os-kt{font-size:10.5px;margin-top:4px}
+.os-charts{display:grid;grid-template-columns:2fr 1fr;gap:11px}
+.os-cb{background:var(--s3);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+.os-cl{font-size:11px;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.os-cl span{font-size:10px;color:var(--g)}
+.bchart{display:flex;align-items:flex-end;gap:5px;height:82px}
+.bi{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.b{width:100%;border-radius:4px 4px 0 0;transition:all .3s}
+.b:hover{filter:brightness(1.2)}
+.bl{font-size:9px;color:var(--dim)}
+.os-als{display:flex;flex-direction:column;gap:7px}
+.osa{display:flex;align-items:center;gap:8px;font-size:11px;padding:8px 10px;border-radius:6px;background:var(--s2);border:1px solid var(--border)}
+.osa-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* Módulos */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;max-width:940px;margin:0 auto}
+.mod{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:24px;transition:all .3s}
+.mod:hover{border-color:var(--bhi);transform:translateY(-4px)}
+.mod-ico{width:40px;height:40px;background:var(--gdim);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.mod-ico svg{width:20px;height:20px;color:var(--g)}
+.mod-n{font-family:var(--ff);font-size:15px;font-weight:600;margin-bottom:7px}
+.mod-d{font-size:13px;color:var(--muted);line-height:1.7}
+.mod-tag{display:inline-block;margin-top:11px;font-size:10px;color:var(--g);background:var(--gdim);border:1px solid rgba(99,212,72,.18);padding:3px 10px;border-radius:4px;letter-spacing:.4px}
+
+/* ── O QUE FAZEMOS ── */
+#o-que-fazemos{background:var(--s1)}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transform:scaleX(0);transition:transform .4s}
+.svc:hover::before{transform:scaleX(1)}
+.svc:hover{border-color:var(--bhi);transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.32)}
+/* Number badge per card */
+.svc-num{font-family:var(--ff);font-size:13px;font-weight:700;width:32px;height:32px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:var(--gdim);border:1px solid var(--gbright);color:var(--g);letter-spacing:.5px;margin-bottom:14px;transition:all .25s;flex-shrink:0}
+.svc:hover .svc-num{background:var(--g);color:#040904;border-color:var(--g)}
+
+.svc-badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:1px;padding:4px 12px;border-radius:4px;margin-bottom:16px}
+.svc-name{font-family:var(--ff);font-size:20px;font-weight:700;margin-bottom:12px;line-height:1.2}
+.svc-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:20px}
+.svc-items{list-style:none;display:flex;flex-direction:column;gap:7px}
+.svc-items li{display:flex;gap:8px;font-size:13px;color:var(--muted)}
+.svc-items li::before{content:'→';color:var(--g);flex-shrink:0}
+/* Card 1 accent */
+.svc:nth-child(1)::before{background:linear-gradient(90deg,var(--al-green),var(--g2))}
+.svc:nth-child(2)::before{background:linear-gradient(90deg,var(--al-blue),#2D7FCC)}
+.svc:nth-child(3)::before{background:linear-gradient(90deg,var(--al-purple),#7A54C8)}
+
+/* ── INDICADORES ── */
+#indicadores{background:#070B08}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:40px}
+.mc{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:24px 20px;text-align:center;transition:all .3s}
+.mc:hover{border-color:var(--bhi)}
+.mc-icon{width:44px;height:44px;background:var(--s3);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;transition:border-color .2s}
+.mc:hover .mc-icon{border-color:var(--bhi)}
+.mc-icon svg{width:22px;height:22px}
+.mc-v{font-family:var(--ff);font-size:38px;font-weight:800;color:var(--g);line-height:1;margin-bottom:5px}
+.mc-l{font-size:13.5px;color:#E9EEE9;margin-bottom:3px;font-weight:500}
+.mc-s{font-size:11.5px;color:var(--muted)}
+.prog-box{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:28px}
+.prog-title{font-family:var(--ff);font-size:16px;font-weight:600;margin-bottom:22px}
+.pi{margin-bottom:16px}
+.pi:last-child{margin-bottom:0}
+.pi-row{display:flex;justify-content:space-between;margin-bottom:7px;font-size:13px}
+.pi-name{color:#E9EEE9}
+.pi-val{font-weight:600}
+.pi-bar{height:6px;background:var(--s3);border-radius:3px;overflow:hidden}
+.pi-fill{height:100%;border-radius:3px;width:0;transition:width 1.3s ease}
+
+/* ── CTA ── */
+#cta{background:var(--s1);padding:80px 52px}
+.cta-box{max-width:820px;margin:0 auto;text-align:center;background:var(--s2);border:1px solid var(--bhi);border-radius:26px;padding:64px;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:320px;height:320px;background:radial-gradient(ellipse,rgba(99,212,72,.09) 0%,transparent 70%);pointer-events:none}
+.cta-eyebrow{justify-content:center}
+.cta-eyebrow::before{display:none}
+.cta-h{font-family:var(--ff);font-size:42px;font-weight:800;margin-bottom:16px;line-height:1.08}
+.cta-h em{font-style:normal;color:var(--g)}
+.cta-sub{font-size:16.5px;color:var(--muted);margin-bottom:38px;line-height:1.72}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.form-row{display:flex;gap:10px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.finput{background:var(--s3);border:1px solid var(--border);border-radius:var(--r);padding:13px 18px;font-size:14px;color:#E9EEE9;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;min-width:230px}
+.finput:focus{border-color:var(--g)}
+.finput::placeholder{color:var(--dim)}
+
+/* ── FOOTER ── */
+footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px}
+.ft-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:22px}
+.ft-copy{font-size:13px;color:var(--dim)}
+.ft-copy a{color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-copy a:hover{color:var(--g)}
+.ft-links{display:flex;gap:20px}
+.ft-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:var(--g)}
+.ft-logo{height:22px;width:auto;opacity:.85}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  section{padding:64px 24px}
+  #hero{padding:100px 24px 60px}
+  .hero-inner{grid-template-columns:1fr;gap:44px}
+  .hero-visual{order:-1}
+  .about-g,.diag-g,.met-intro{grid-template-columns:1fr;gap:40px}
+  .deic{grid-template-columns:repeat(2,1fr)}
+  .os-body{grid-template-columns:1fr}
+  .os-side{display:none}
+  .os-kpis{grid-template-columns:repeat(2,1fr)}
+  .os-charts{grid-template-columns:1fr}
+  .mods{grid-template-columns:1fr 1fr}
+  .svcs{grid-template-columns:1fr}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .cta-box{padding:36px 24px}
+  .cta-h{font-size:28px}
+  footer{padding:34px 24px}
+  .ft-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-wrap">
+<img src="trinxs_logo_v3.svg" alt="TRINXS" class="nav-logo-img" style="height: 148px; width: auto;">    </div>
+    <span class="nav-sub">Inteligência Operacional</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#diagnostico">Diagnóstico</a></li>
+    <li><a href="#metodo">Método</a></li>
+    <li><a href="#plataforma">Plataforma</a></li>
+    <li><a href="#o-que-fazemos">O que fazemos</a></li>
+    <li><a href="#cta" class="nav-cta">Falar com a TRINXS</a></li>
+  </ul>
+  <button class="nav-burger" onclick="toggleMenu()">☰</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="htag">Inteligência Operacional para PMEs</div>
+<h1 class="hero-h1">Sua empresa<br><em>organizada.</em><br><span style="font-weight: 400; font-family: 'DM Sans', sans-serif; letter-spacing: -0.3px;">Controlada.</span><br><span style="font-weight: 400; font-family: 'DM Sans', sans-serif; letter-spacing: -0.3px;">Eficiente.</span></h1>      <p class="hero-lead">A TRINXS integra <strong>operação, gestão e tecnologia</strong> para transformar empresas desestruturadas em sistemas claros, controláveis e orientados a resultado.</p>
+      <div class="hero-btns">
+        <a href="#diagnostico" class="btn-p">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L14 4V9C14 12.5 11.5 14.5 8 15.5C4.5 14.5 2 12.5 2 9V4L8 1Z" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 8L7.5 10L10.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Solicitar Diagnóstico
+        </a>
+        <a href="#plataforma" class="btn-s">Ver a plataforma →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="dash-card">
+        <div class="dash-top">
+          <span class="dash-ttl">TRINXS OS · PAINEL EXECUTIVO</span>
+          <span class="dash-live">Tempo real</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-v" id="h1">0</div><div class="kpi-l">Eficiência</div><div class="kpi-d" style="color:#86E84A">↑ +12%</div></div>
+          <div class="kpi"><div class="kpi-v" id="h2">0%</div><div class="kpi-l">Controle</div><div class="kpi-d" style="color:#86E84A">↑ +8%</div></div>
+          <div class="kpi"><div class="kpi-v" id="h3">0</div><div class="kpi-l">Processos</div><div class="kpi-d" style="color:#86E84A">↑ +5</div></div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-lbl">Evolução operacional — últimos 6 meses</div>
+          <svg class="sparksvg" viewBox="0 0 300 58" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#63D448" stop-opacity=".28"/>
+                <stop offset="100%" stop-color="#63D448" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,50 C30,46 50,40 80,34 C110,28 130,26 160,18 C190,10 220,14 250,8 C270,4 285,2 300,1" stroke="#63D448" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M0,50 C30,46 50,40 80,34 C110,28 130,26 160,18 C190,10 220,14 250,8 C270,4 285,2 300,1 L300,58 L0,58 Z" fill="url(#sg)"/>
+            <circle cx="300" cy="1" r="4" fill="#63D448"/>
+          </svg>
+        </div>
+        <div class="alerts">
+          <div class="al" style="border-color:rgba(99,212,72,.2)"><div class="al-dot" style="background:#63D448"></div><div class="al-t">3 redundâncias operacionais eliminadas</div><div class="al-time">agora</div></div>
+          <div class="al" style="border-color:rgba(245,200,66,.15)"><div class="al-dot" style="background:#F5C842"></div><div class="al-t">Processo de onboarding pendente</div><div class="al-time">2h</div></div>
+          <div class="al" style="border-color:rgba(99,212,72,.2)"><div class="al-dot" style="background:#63D448"></div><div class="al-t">Relatório executivo gerado automaticamente</div><div class="al-time">hoje</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="ctr">
+    <div class="about-g">
+      <div class="reveal">
+        <div class="eyebrow">Sobre a TRINXS</div>
+        <div class="about-stmt">A empresa que <em>transforma desorganização em controle</em> — e controle em resultado.</div>
+        <p class="about-body">Empresas que crescem sem estrutura proporcional à sua complexidade não colapsam por falta de esforço. Colapsam porque <strong>operação, gestão e tecnologia nunca foram integradas</strong>.</p>
+        <p class="about-body">A TRINXS existe para corrigir essa distorção. Não vendemos consultoria. Vendemos <strong>inteligência operacional aplicada</strong>: método proprietário, plataforma tecnológica e execução orientada a resultado financeiro mensurável.</p>
+        <ul class="val-list">
+          <li class="val-item"><div class="vi-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="vi-text"><strong>Clareza como base da gestão</strong>Sem visibilidade real, não existe controle possível.</div></li>
+          <li class="val-item"><div class="vi-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="vi-text"><strong>Decisão orientada por dados</strong>Gestão por percepção é o maior desperdício de uma empresa.</div></li>
+          <li class="val-item"><div class="vi-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="vi-text"><strong>Tecnologia como meio, não fim</strong>A plataforma amplifica o método. Nunca substitui o resultado.</div></li>
+          <li class="val-item"><div class="vi-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="vi-text"><strong>Responsabilidade com o resultado</strong>Só entregamos o que podemos medir e comprovar.</div></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="tri-col">
+          <div class="tc"><div class="tc-h"><div class="tc-n">01</div><div class="tc-name">Operação</div></div><div class="tc-desc">Mapeamos e organizamos a operação real da empresa — processos, fluxos, responsabilidades e gargalos que consomem eficiência silenciosamente.</div><div class="tc-tags"><span class="tctag">Mapeamento</span><span class="tctag">Processos</span><span class="tctag">Gargalos</span><span class="tctag">Padronização</span></div></div>
+          <div class="tc"><div class="tc-h"><div class="tc-n">02</div><div class="tc-name">Gestão</div></div><div class="tc-desc">Estruturamos indicadores, rotinas e integrações entre áreas para que o gestor tome decisões com dados reais — não com percepção.</div><div class="tc-tags"><span class="tctag">KPIs</span><span class="tctag">Indicadores</span><span class="tctag">Rotinas</span><span class="tctag">Decisões</span></div></div>
+          <div class="tc"><div class="tc-h"><div class="tc-n">03</div><div class="tc-name">Tecnologia</div></div><div class="tc-desc">A TRINXS OS centraliza tudo — dados, alertas, relatórios — tornando o resultado sustentável mesmo sem o consultor ativo.</div><div class="tc-tags"><span class="tctag">TRINXS OS</span><span class="tctag">Automação</span><span class="tctag">Alertas</span><span class="tctag">Dashboards</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+<!-- DIAGNÓSTICO -->
+<!-- DIAGNÓSTICO SECTION -->
+<section id="diagnostico">
+  <div class="ctr">
+    <div class="eyebrow">Diagnóstico</div>
+    <h2 class="sh">Sua empresa sob <em>olhar estruturado</em></h2>
+    <p class="lead">O diagnóstico TRINXS revela o que a empresa realmente é — não o que o organograma diz que ela deveria ser. Identificamos desperdícios, gargalos e oportunidades que você ainda não consegue ver.</p>
+    
+    <div class="diag-g">
+      <!-- STEPS - LADO ESQUERDO -->
+      <div class="steps">
+        <div class="step active" onclick="showStep(this,0)">
+          <div class="step-n">01</div>
+          <div class="step-c">
+            <div class="step-title">Levantamento Operacional</div>
+            <div class="step-desc">Mapeamos como a empresa realmente funciona — processos, fluxos, dependências e rotinas reais, não o que está no papel.</div>
+            <div class="step-tag">Dados centralizados na TRINXS OS</div>
+          </div>
+        </div>
+        
+        <div class="step" onclick="showStep(this,1)">
+          <div class="step-n">02</div>
+          <div class="step-c">
+            <div class="step-title">Análise de Gargalos</div>
+            <div class="step-desc">Identificamos onde a empresa perde eficiência, dinheiro e controle — com rastreabilidade operacional completa.</div>
+            <div class="step-tag">Relatório executivo estruturado</div>
+          </div>
+        </div>
+        
+        <div class="step" onclick="showStep(this,2)">
+          <div class="step-n">03</div>
+          <div class="step-c">
+            <div class="step-title">Análise de Custos e Eficiência</div>
+            <div class="step-desc">Auditoria detalhada de custos operacionais. Identificação de desperdícios, redundâncias e oportunidades de ganho imediato.</div>
+            <div class="step-tag">Módulo Eficiência · TRINXS OS</div>
+          </div>
+        </div>
+        
+        <div class="step" onclick="showStep(this,3)">
+          <div class="step-n">04</div>
+          <div class="step-c">
+            <div class="step-title">Plano de Ação Priorizado</div>
+            <div class="step-desc">Entregamos um plano claro com as ações de maior impacto financeiro — ordenadas por urgência e retorno.</div>
+            <div class="step-tag">Trial 30 dias na plataforma incluso</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- DETAIL PANEL - LADO DIREITO -->
+      <div class="detail-area">
+        <div class="detail active" id="d0">
+          <div class="d-phase">Etapa 01 · Diagnóstico</div>
+          <div class="d-title">Levantamento Operacional</div>
+          <div class="d-body">Antes de qualquer recomendação, precisamos entender como a empresa realmente funciona — não como o dono acredita que funciona. Essa é a diferença entre consultoria real e diagnóstico genérico.</div>
+          <ul class="d-list">
+            <li>Mapeamento estrutural completo</li>
+            <li>Análise dos fluxos operacionais reais</li>
+            <li>Levantamento de dependências informais</li>
+            <li>Identificação de processos não documentados</li>
+            <li>Avaliação do nível de maturidade operacional</li>
+          </ul>
+          <div class="d-result"><strong>RESULTADO ESPERADO</strong> Desorganização invisível transformada em informação estruturada — registrada e acessível na plataforma TRINXS OS.</div>
+        </div>
+        
+        <div class="detail" id="d1">
+          <div class="d-phase">Etapa 02 · Diagnóstico</div>
+          <div class="d-title">Análise de Gargalos</div>
+          <div class="d-body">Onde está o desperdício que você não vê? Retrabalho, dependência excessiva, processos quebrados e custo oculto são sintomas — identificamos a causa raiz.</div>
+          <ul class="d-list">
+            <li>Mapeamento de retrabalho e redundâncias</li>
+            <li>Análise de dependência operacional do dono</li>
+            <li>Identificação de custos invisíveis</li>
+            <li>Avaliação de riscos operacionais</li>
+            <li>Priorização por impacto financeiro</li>
+          </ul>
+          <div class="d-result"><strong>RESULTADO ESPERADO</strong> Visão clara de onde a empresa perde dinheiro e eficiência — com estimativa de ganho potencial após estruturação.</div>
+        </div>
+        
+        <div class="detail" id="d2">
+          <div class="d-phase">Etapa 03 · Diagnóstico</div>
+          <div class="d-title">Análise de Custos e Eficiência</div>
+          <div class="d-body">Custos operacionais são o maior ponto cego das empresas em crescimento. Auditamos categoria por categoria para encontrar onde o dinheiro está sendo desperdiçado sem percepção.</div>
+          <ul class="d-list">
+            <li>Levantamento completo de contratos</li>
+            <li>Análise de consumo real versus esperado</li>
+            <li>Identificação de cobranças indevidas</li>
+            <li>Mapeamento de ineficiências por área</li>
+            <li>Estimativa de economia e ganho imediato</li>
+          </ul>
+          <div class="d-result"><strong>RESULTADO ESPERADO</strong> Redução imediata de custos operacionais — com controle centralizado no Módulo Eficiência da TRINXS OS.</div>
+        </div>
+        
+        <div class="detail" id="d3">
+          <div class="d-phase">Etapa 04 · Diagnóstico</div>
+          <div class="d-title">Plano de Ação Priorizado</div>
+          <div class="d-body">O diagnóstico sem plano é apenas um relatório. Entregamos um roteiro de transformação ordenado por impacto — para que a empresa comece a ganhar resultado desde a primeira semana.</div>
+          <ul class="d-list">
+            <li>Relatório executivo com diagnóstico completo</li>
+            <li>Análise financeira de desperdícios encontrados</li>
+            <li>Ações ordenadas por urgência e retorno</li>
+            <li>Estimativa de ganho potencial por ação</li>
+            <li>Trial de 30 dias na plataforma incluso</li>
+          </ul>
+          <div class="d-result"><strong>RESULTADO ESPERADO</strong> Clareza total sobre o caminho de transformação — e acesso imediato à plataforma com dados organizados em tempo real.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============================================
+   DIAGNÓSTICO - CSS ESPECÍFICO
+   ============================================ */
+
+/* Layout principal */
+.diag-g {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* STEPS - LADO ESQUERDO */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(103,212,61,0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
+.step:hover {
+  background: rgba(103,212,61,0.02);
+  padding-left: 8px;
+}
+
+/* Números 01, 02, 03, 04 */
+.step-n {
+  min-width: 85px;
+  flex-shrink: 0;
+  font-family: 'Syne', sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #3E5430;
+  transition: color 0.3s ease;
+}
+
+.step.active .step-n {
+  color: #67D43D;
+}
+
+.step:hover .step-n {
+  color: #67D43D;
+}
+
+/* Conteúdo do texto */
+.step-c {
+  flex: 1;
+  padding-right: 20px;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.step.active .step-c,
+.step:hover .step-c {
+  opacity: 1;
+}
+
+/* Título */
+.step-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #E9EEE9;
+}
+
+/* Descrição */
+.step-desc {
+  font-size: 14px;
+  color: #6E8C60;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+/* Tag */
+.step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  color: #67D43D;
+}
+
+.step-tag::before {
+  content: '▸';
+  font-size: 12px;
+}
+
+/* DETAIL PANEL - LADO DIREITO */
+.detail-area {
+  position: sticky;
+  top: 100px;
+}
+
+.detail {
+  background: #111608;
+  border: 1px solid rgba(103,212,61,0.15);
+  border-radius: 20px;
+  padding: 36px;
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.detail.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.d-phase {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #67D43D;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.d-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #E9EEE9;
+}
+
+.d-body {
+  font-size: 14px;
+  color: #6E8C60;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.d-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.d-list li {
+  background: #192010;
+  border: 1px solid rgba(103,212,61,0.08);
+  border-radius: 40px;
+  padding: 8px 18px;
+  font-size: 13px;
+  color: #6E8C60;
+  transition: all 0.2s ease;
+}
+
+.d-list li:hover {
+  border-color: rgba(103,212,61,0.25);
+  color: #E9EEE9;
+}
+
+.d-result {
+  background: rgba(103,212,61,0.08);
+  border-left: 3px solid #67D43D;
+  border-radius: 12px;
+  padding: 18px 22px;
+  font-size: 14px;
+  color: #67D43D;
+}
+
+.d-result strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  color: #8AE85A;
+  text-transform: uppercase;
+}
+
+/* Responsivo */
+@media (max-width: 960px) {
+  .diag-g {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .step {
+    gap: 32px;
+    padding: 20px 0;
+  }
+  
+  .step-n {
+    min-width: 65px;
+    font-size: 36px;
+  }
+  
+  .detail-area {
+    position: static;
+  }
+  
+  .detail {
+    padding: 24px;
+  }
+  
+  .d-title {
+    font-size: 24px;
+  }
+}
+</style>
+
+<script>
+// Função para alternar entre os steps
+function showStep(element, stepIndex) {
+  // Remove active de todos os steps
+  var steps = document.querySelectorAll('.step');
+  steps.forEach(function(step) {
+    step.classList.remove('active');
+  });
+  
+  // Adiciona active no step clicado
+  element.classList.add('active');
+  
+  // Esconde todos os details
+  var details = document.querySelectorAll('.detail');
+  details.forEach(function(detail) {
+    detail.classList.remove('active');
+  });
+  
+  // Mostra o detail correspondente
+  var targetDetail = document.getElementById('d' + stepIndex);
+  if (targetDetail) {
+    targetDetail.classList.add('active');
+  }
+}
+</script>
+<!-- MÉTODO -->
+<section id="metodo">
+  <div class="ctr">
+    <div class="met-intro">
+      <div class="reveal">
+        <div class="eyebrow">Método D.E.I.C.</div>
+        <h2 class="sh">Um ciclo contínuo de <em>inteligência operacional</em></h2>
+      </div>
+      <div class="reveal">
+        <p style="font-size:15px;color:var(--muted);line-height:1.82;padding-top:42px">O método TRINXS não é uma sequência linear. É um <strong style="color:#E9EEE9">ciclo vivo</strong> — cada etapa alimenta a próxima, sustentada pela plataforma tecnológica que registra, processa e apresenta resultados em tempo real.</p>
+      </div>
+    </div>
+    <div class="deic reveal">
+      <div class="dc"><div class="dc-letter">D</div><div class="dc-word">Diagnosticar</div><div class="dc-desc">Compreender a operação real da empresa. Mapeamento estrutural, identificação de gargalos e avaliação de maturidade operacional completa.</div><div class="dc-tag">Dados centralizados na TRINXS OS</div></div>
+      <div class="dc"><div class="dc-letter">E</div><div class="dc-word">Estruturar</div><div class="dc-desc">Organizar a operação em um sistema executável. Processos definidos, responsabilidades claras, indicadores estruturados e rotinas funcionando.</div><div class="dc-tag">Plataforma reflete a estrutura real</div></div>
+      <div class="dc"><div class="dc-letter">I</div><div class="dc-word">Integrar</div><div class="dc-desc">Conectar operação, gestão e tecnologia em um único ambiente. Dashboards ativos, áreas integradas, decisão baseada em dados reais.</div><div class="dc-tag">TRINXS OS como centro operacional</div></div>
+      <div class="dc"><div class="dc-letter">C</div><div class="dc-word">Controlar</div><div class="dc-desc">Garantir a continuidade. Monitoramento de indicadores, alertas inteligentes, relatórios automáticos e ajustes sem depender do consultor.</div><div class="dc-tag">Controle permanente via plataforma</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+<!-- PLATAFORMA -->
+<section id="plataforma">
+  <div class="ctr">
+    <div class="plat-hdr reveal">
+      <div class="eyebrow">Plataforma</div>
+      <h2 class="sh">TRINXS OS — <em>Centro de Controle</em> Operacional</h2>
+      <p class="lead">Não é um ERP. É a <strong>camada de inteligência operacional</strong> que centraliza dados, automatiza indicadores e entrega ao gestor visibilidade real do negócio — com ou sem consultoria ativa.</p>
+    </div>
+
+    <!-- OS MOCKUP -->
+    <div class="os reveal">
+      <div class="os-bar">
+        <div class="os-dots"><span></span><span></span><span></span></div>
+        <div class="os-url">app.trinxs.com.br · Painel Executivo</div>
+        <div class="os-live">Tempo real</div>
+      </div>
+      <div class="os-body">
+        <div class="os-side">
+          <div class="os-side-hdr">TRINXS OS</div>
+          <div class="sni act"><svg viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="8" y="1" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="1" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/><rect x="8" y="8" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.2"/></svg>Painel Executivo</div>
+          <div class="sni"><svg viewBox="0 0 14 14" fill="none"><path d="M2 10L5 6L8 8L12 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Indicadores</div>
+          <div class="sni"><svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 7L6.5 9L9.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Processos</div>
+          <div class="sni"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1L13 3.5V7C13 10.5 10.5 12.5 7 13.5C3.5 12.5 1 10.5 1 7V3.5L7 1Z" stroke="currentColor" stroke-width="1.2"/></svg>Eficiência</div>
+          <div class="sni"><svg viewBox="0 0 14 14" fill="none"><path d="M1 3H13M1 7H9M1 11H11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Relatórios</div>
+          <div class="sni"><svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 12C2 9.8 4.2 8 7 8C9.8 8 12 9.8 12 12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Usuários</div>
+        </div>
+        <div class="os-main">
+          <div class="os-mhdr">
+            <div class="os-mtitle">Painel Executivo</div>
+            <div class="os-mmeta">Empresa Exemplo · Jun 2026 · <span>Atualizado agora</span></div>
+          </div>
+          <div class="os-kpis">
+            <div class="os-kpi" style="border-color:rgba(99,212,72,.25)"><div class="os-kv" style="color:#63D448">94%</div><div class="os-kl">Eficiência Operacional</div><div class="os-kt" style="color:#86E84A">↑ +12% vs mês anterior</div></div>
+            <div class="os-kpi" style="border-color:rgba(74,158,232,.2)"><div class="os-kv" style="color:#4A9EE8">R$18k</div><div class="os-kl">Economia Gerada</div><div class="os-kt" style="color:#7ABEF0">↑ Acumulado trimestre</div></div>
+            <div class="os-kpi" style="border-color:rgba(155,111,232,.2)"><div class="os-kv" style="color:#9B6FE8">27</div><div class="os-kl">Processos Ativos</div><div class="os-kt" style="color:#B89AF0">↑ +5 desde implantação</div></div>
+            <div class="os-kpi" style="border-color:rgba(245,200,66,.2)"><div class="os-kv" style="color:#F5C842">3</div><div class="os-kl">Alertas Ativos</div><div class="os-kt" style="color:#F5C842">⚠ 1 requer atenção</div></div>
+          </div>
+          <div class="os-charts">
+            <div class="os-cb">
+              <div class="os-cl">Eficiência operacional — 6 meses<span>▲ tendência positiva</span></div>
+              <div class="bchart">
+                <div class="bi"><div class="b" style="height:46px;background:linear-gradient(180deg,#368522,#1E5210)"></div><div class="bl">Jan</div></div>
+                <div class="bi"><div class="b" style="height:40px;background:linear-gradient(180deg,#4A9EE8,#2D6FB8)"></div><div class="bl">Fev</div></div>
+                <div class="bi"><div class="b" style="height:54px;background:linear-gradient(180deg,#4BB835,#2E7018)"></div><div class="bl">Mar</div></div>
+                <div class="bi"><div class="b" style="height:50px;background:linear-gradient(180deg,#9B6FE8,#6840C0)"></div><div class="bl">Abr</div></div>
+                <div class="bi"><div class="b" style="height:65px;background:linear-gradient(180deg,#63D448,#368522)"></div><div class="bl">Mai</div></div>
+                <div class="bi"><div class="b" style="height:72px;background:linear-gradient(180deg,#63D448,#4BB835)"></div><div class="bl">Jun</div></div>
+              </div>
+            </div>
+            <div class="os-cb">
+              <div class="os-cl">Alertas do sistema</div>
+              <div class="os-als">
+                <div class="osa" style="border-color:rgba(99,212,72,.25)"><div class="osa-dot" style="background:#63D448"></div><span style="color:#86E84A">Operação organizada</span></div>
+                <div class="osa" style="border-color:rgba(245,200,66,.25)"><div class="osa-dot" style="background:#F5C842"></div><span style="color:#F5C842">Processo RH pendente</span></div>
+                <div class="osa" style="border-color:rgba(240,128,48,.25)"><div class="osa-dot" style="background:#F08030"></div><span style="color:#F08030">Custo acima do limite</span></div>
+                <div class="osa" style="border-color:rgba(74,158,232,.25)"><div class="osa-dot" style="background:#4A9EE8"></div><span style="color:#4A9EE8">Relatório gerado</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MÓDULOS -->
+    <div class="mods reveal">
+      <div class="mod"><div class="mod-ico"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg></div><div class="mod-n">Central de Indicadores</div><div class="mod-d">KPIs operacionais e financeiros em tempo real, configuráveis por empresa e área. Metas, histórico e comparativos automáticos.</div><div class="mod-tag">MVP · FASE 1</div></div>
+      <div class="mod"><div class="mod-ico"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="4" cy="15" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="15" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 7L4 13M13 7L16 13M7 15H13" stroke="currentColor" stroke-width="1.2"/></svg></div><div class="mod-n">Mapeamento de Processos</div><div class="mod-d">Visualização e documentação dos fluxos operacionais reais. Identificação de gargalos e responsáveis por etapa.</div><div class="mod-tag">MVP · FASE 1</div></div>
+      <div class="mod"><div class="mod-ico"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L18 6V10C18 14 14.5 17 10 18C5.5 17 2 14 2 10V6L10 2Z" stroke="currentColor" stroke-width="1.5"/><path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mod-n">Módulo Eficiência</div><div class="mod-d">Controle centralizado de custos operacionais por categoria.</div><div class="mod-tag">FASE 2 · VERTICAL</div></div>
+      <div class="mod"><div class="mod-ico"><svg viewBox="0 0 20 20" fill="none"><path d="M4 5H16M4 10H12M4 15H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="mod-n">Relatórios Executivos</div><div class="mod-d">Geração automática de relatórios periódicos. Insights operacionais consolidados sem trabalho manual.</div><div class="mod-tag">FASE 2</div></div>
+      <div class="mod"><div class="mod-ico"><svg viewBox="0 0 20 20" fill="none"><path d="M4 4L10 2L16 4V10C16 14 13 16.5 10 17.5C7 16.5 4 14 4 10V4Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 7V11M10 13V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="mod-n">Alertas e Gatilhos</div><div class="mod-d">Notificações automáticas quando um indicador sai do padrão definido. Proatividade operacional sem esforço humano.</div><div class="mod-tag">FASE 2</div></div>
+      <div class="mod"><div class="mod-ico"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mod-n">Integrações via API</div><div class="mod-d">Conexão com ERPs, sistemas financeiros e ferramentas existentes. Dados centralizados sem necessidade de migração.</div><div class="mod-tag">FASE 3</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+<!-- O QUE FAZEMOS -->
+<section id="o-que-fazemos">
+  <div class="ctr">
+    <div class="eyebrow">O que fazemos</div>
+    <h2 class="sh">Três formas de <em>gerar resultado</em></h2>
+    <p class="lead">Da porta de entrada ao modelo recorrente — cada serviço entrega resultado financeiro mensurável e prepara o cliente para o próximo nível de controle operacional.</p>
+    <div class="svcs">
+
+      <!-- CARD 1 -->
+      <div class="svc reveal">
+        <div class="svc-num">1</div>
+        <div class="svc-badge" style="background:rgba(99,212,72,.1);color:var(--g);border:1px solid rgba(99,212,72,.2)">ENTRADA</div>
+        <div class="svc-name">Diagnóstico Estratégico</div>
+        <div class="svc-desc">Mapeamento completo da operação. Identifica desperdícios, gargalos e oportunidades de ganho imediato — com plano de ação priorizado e acesso à plataforma.</div>
+        <ul class="svc-items">
+          <li>Levantamento operacional completo</li>
+          <li>Relatório executivo com diagnóstico</li>
+          <li>Plano de ação com estimativa de ganho</li>
+          <li>Trial de 30 dias na TRINXS OS incluso</li>
+        </ul>
+        </div>
+
+      <!-- CARD 2 -->
+      <div class="svc reveal" style="transition-delay:.1s">
+        <div class="svc-num">2</div>
+        <div class="svc-badge" style="background:rgba(74,158,232,.1);color:#4A9EE8;border:1px solid rgba(74,158,232,.2)">PRINCIPAL</div>
+        <div class="svc-name">Estruturação + Gestão Híbrida</div>
+        <div class="svc-desc">Transformação completa com implantação da plataforma. Consultoria mensal + acesso total à TRINXS OS com dados reais da empresa.</div>
+        <ul class="svc-items">
+          <li>Organização e padronização de processos</li>
+          <li>Implantação da plataforma TRINXS OS</li>
+          <li>Estruturação de indicadores gerenciais</li>
+          <li>Consultoria mensal de acompanhamento</li>
+          <li>Relatórios e alertas automáticos</li>
+        </ul>
+        </div>
+
+      <!-- CARD 3 -->
+      <div class="svc reveal" style="transition-delay:.2s">
+        <div class="svc-num">3</div>
+        <div class="svc-badge" style="background:rgba(155,111,232,.1);color:#9B6FE8;border:1px solid rgba(155,111,232,.2)">ESCALA</div>
+        <div class="svc-name">Plataforma SaaS Standalone</div>
+        <div class="svc-desc">Acesso à TRINXS OS de forma autônoma. Para empresas com estrutura mínima ou que já passaram pela consultoria e querem manter o controle independentemente.</div>
+        <ul class="svc-items">
+          <li>Acesso completo à plataforma TRINXS OS</li>
+          <li>Onboarding guiado com suporte</li>
+          <li>KPIs, alertas e relatórios ativos</li>
+          <li>Módulo Eficiência incluso</li>
+          <li>Upgrade para modelo híbrido disponível</li>
+        </ul>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+<!-- INDICADORES -->
+<section id="indicadores">
+  <div class="ctr">
+    <div class="eyebrow">Resultado</div>
+    <h2 class="sh">O que você ganha com <em>inteligência operacional</em></h2>
+    <p class="lead">Números reais de empresas que passaram pelo processo completo TRINXS — diagnóstico, estruturação e controle contínuo.</p>
+    <div class="metrics">
+      <div class="mc reveal"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 17L15 10L11 14L2 7" stroke="#63D448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17H22V11" stroke="#63D448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-v" style="color:#63D448" data-target="35" data-suffix="%">0%</div><div class="mc-l">Redução de custos operacionais</div><div class="mc-s">após estruturação completa</div></div>
+      <div class="mc reveal" style="transition-delay:.08s"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" stroke="#4A9EE8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-v" style="color:#4A9EE8" data-target="40" data-suffix="%">0%</div><div class="mc-l">Ganho de eficiência</div><div class="mc-s">com método D.E.I.C. ativo</div></div>
+      <div class="mc reveal" style="transition-delay:.16s"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#F5C842" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#F5C842" stroke-width="1.8"/><circle cx="12" cy="12" r="1.5" fill="#F5C842"/><path d="M12 2V5M12 19V22M2 12H5M19 12H22" stroke="#F5C842" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="mc-v" style="color:#F5C842" data-target="76" data-suffix="%">0%</div><div class="mc-l">Redução de retrabalho</div><div class="mc-s">processos padronizados</div></div>
+      <div class="mc reveal" style="transition-delay:.24s"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 17L8 11L12 15L22 5" stroke="#9B6FE8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 5H22V11" stroke="#9B6FE8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-v" style="color:#9B6FE8" data-target="6" data-suffix=" meses">0</div><div class="mc-l">Para controle pleno</div><div class="mc-s">da estruturação ao autônomo</div></div>
+    </div>
+    <div class="prog-box reveal">
+      <div class="prog-title">Evolução típica pós-implantação TRINXS</div>
+      <div class="pi"><div class="pi-row"><span class="pi-name">Visibilidade operacional</span><span class="pi-val" style="color:#63D448">94%</span></div><div class="pi-bar"><div class="pi-fill" data-width="94" style="background:linear-gradient(90deg,#368522,#63D448)"></div></div></div>
+      <div class="pi"><div class="pi-row"><span class="pi-name">Controle de indicadores</span><span class="pi-val" style="color:#4A9EE8">88%</span></div><div class="pi-bar"><div class="pi-fill" data-width="88" style="background:linear-gradient(90deg,#2D6FB8,#4A9EE8)"></div></div></div>
+      <div class="pi"><div class="pi-row"><span class="pi-name">Redução de retrabalho</span><span class="pi-val" style="color:#F5C842">76%</span></div><div class="pi-bar"><div class="pi-fill" data-width="76" style="background:linear-gradient(90deg,#B8902A,#F5C842)"></div></div></div>
+      <div class="pi"><div class="pi-row"><span class="pi-name">Independência do dono</span><span class="pi-val" style="color:#9B6FE8">70%</span></div><div class="pi-bar"><div class="pi-fill" data-width="70" style="background:linear-gradient(90deg,#6840C0,#9B6FE8)"></div></div></div>
+      <div class="pi"><div class="pi-row"><span class="pi-name">Otimização de custos</span><span class="pi-val" style="color:#F08030">82%</span></div><div class="pi-bar"><div class="pi-fill" data-width="82" style="background:linear-gradient(90deg,#A05020,#F08030)"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="ctr">
+    <div class="cta-box reveal">
+      <div class="eyebrow cta-eyebrow">Comece agora</div>
+      <h2 class="cta-h">Sua operação sob <em>controle real</em> em até 6 meses.</h2>
+      <p class="cta-sub">O primeiro passo é um diagnóstico. Entendemos como sua empresa realmente funciona — e mostramos onde estão os desperdícios que você ainda não consegue ver.</p>
+      <div class="cta-btns">
+        <a href="mailto:contato@trinxs.com.br" class="btn-p">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M2 4L8 9L14 4M2 4H14V13H2V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Solicitar Diagnóstico
+        </a>
+        <a href="https://wa.me/5500000000000" class="btn-s" target="_blank">WhatsApp →</a>
+      </div>
+      <div class="form-row">
+        <input type="text" class="finput" placeholder="Seu nome" id="fn">
+        <input type="email" class="finput" placeholder="E-mail corporativo" id="fe">
+        <button class="btn-p" onclick="submitForm()" style="border:none;cursor:pointer">Enviar →</button>
+      </div>
+      <p style="font-size:12px;color:var(--dim);margin-top:16px">Retorno em até 24h úteis · trinxs.com.br</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div>
+<img src="trinxs_logo_v3.svg" alt="TRINXS" class="ft-logo" style="height: 288px; width: auto;">      <div class="ft-copy" style="margin-top:10px">Clareza, controle e eficiência para sua empresa.<br>
+        <a href="mailto:contato@trinxs.com.br">contato@trinxs.com.br</a> · <a href="https://trinxs.com.br">trinxs.com.br</a>
+      </div>
+    </div>
+    <div class="ft-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#metodo">Método</a>
+      <a href="#plataforma">Plataforma</a>
+      <a href="#o-que-fazemos">Serviços</a>
+      <a href="#cta">Contato</a>
+    </div>
+    <div class="ft-copy">© 2026 TRINXS. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<script>
+/* ── KPI counter ── */
+function counter(el,target,suffix,dur){
+  let v=0;const step=target/(dur/16);
+  const t=setInterval(()=>{v+=step;if(v>=target){v=target;clearInterval(t)}el.textContent=Math.round(v)+suffix},16)
+}
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    counter(document.getElementById('h1'),94,'',1400);
+    counter(document.getElementById('h2'),88,'%',1400);
+    counter(document.getElementById('h3'),27,'',1200);
+  },700);
+});
+
+/* ── Intersection Observer ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('vis');
+    // Metric counters
+    e.target.querySelectorAll('[data-target]').forEach(el=>{
+      if(el.dataset.animated)return;
+      el.dataset.animated='1';
+      counter(el,parseInt(el.dataset.target),el.dataset.suffix||'',1500);
+    });
+    // Progress bars
+    e.target.querySelectorAll('.pi-fill').forEach(b=>{
+      const w=b.dataset.width;
+      if(w)setTimeout(()=>{b.style.width=w+'%'},280);
+    });
+  });
+},{threshold:.14});
+document.querySelectorAll('.reveal,.prog-box').forEach(el=>io.observe(el));
+
+/* ── Step switcher ── */
+function showStep(el,i){
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.detail').forEach(d=>d.classList.remove('active'));
+  el.classList.add('active');
+  const d=document.getElementById('d'+i);
+  if(d){d.classList.add('active')}
+}
+
+/* ── Nav scroll ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.background=
+    window.scrollY>60?'rgba(7,11,8,.97)':'rgba(7,11,8,.88)';
+});
+
+/* ── Mobile menu ── */
+function toggleMenu(){
+  const ul=document.querySelector('.nav-links');
+  const open=ul.style.display==='flex';
+  ul.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:66px;left:0;right:0;background:rgba(7,11,8,.98);padding:20px 24px;border-bottom:1px solid rgba(99,212,72,.1);gap:4px;z-index:199';
+}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  if(window.innerWidth<960){document.querySelector('.nav-links').style.cssText=''}
+}));
+
+/* ── Form ── */
+function submitForm(){
+  const n=document.getElementById('fn').value,e=document.getElementById('fe').value;
+  if(!n||!e){alert('Preencha seu nome e e-mail.');return}
+  alert('Obrigado, '+n+'! Retornaremos em até 24h para '+e+'.');
+  document.getElementById('fn').value='';document.getElementById('fe').value='';
+}
+</script>
+</body>
+</html>
