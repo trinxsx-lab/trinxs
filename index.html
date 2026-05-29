@@ -357,19 +357,70 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   <li><a href="#metodo">Método</a></li>
   <li><a href="#plataforma">Plataforma</a></li>
   
- <!-- MÓDULOS DE EFICIÊNCIA COM SUBMENU -->
-<li class="nav-item-dropdown">
-  <a href="#">Módulos de Eficiência</a>
-  <ul class="dropdown-menu">
-    <li><a href="#telecom">Telecomunicações</a></li>
-  </ul>
-</li>
-  
-  <li><a href="#o-que-fazemos">O que fazemos</a></li>
-  <li><a href="#cta" class="nav-cta">Falar com a TRINXS</a></li>
-</ul>
-  <button class="nav-burger" onclick="toggleMenu()">☰</button>
-</nav>
+/* ========================================
+   DROPDOWN MENU - APENAS HOVER (OCULTO POR PADRÃO)
+   ======================================== */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-item-dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-item-dropdown > a::after {
+  content: '▼';
+  font-size: 8px;
+  transition: transform 0.2s ease;
+}
+
+.nav-item-dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+/* Esconde o submenu inicialmente */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111608;
+  border: 1px solid rgba(103,212,61,0.15);
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  list-style: none;
+}
+
+/* Mostra o submenu ao passar o mouse */
+.nav-item-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Estilo dos links do submenu */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #6E8C60;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #192010;
+  color: #67D43D;
+  padding-left: 24px;
+}
 
 <!-- HERO -->
 <section id="hero">
