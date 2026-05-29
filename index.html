@@ -348,13 +348,22 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
     <span class="nav-sub">Inteligência Operacional</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#diagnostico">Diagnóstico</a></li>
-    <li><a href="#metodo">Método</a></li>
-    <li><a href="#plataforma">Plataforma</a></li>
-    <li><a href="#o-que-fazemos">O que fazemos</a></li>
-    <li><a href="#cta" class="nav-cta">Falar com a TRINXS</a></li>
-  </ul>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="#diagnostico">Diagnóstico</a></li>
+  <li><a href="#metodo">Método</a></li>
+  <li><a href="#plataforma">Plataforma</a></li>
+  
+  <!-- MÓDULOS DE EFICIÊNCIA COM SUBMENU -->
+  <li class="nav-item-dropdown">
+    <a href="#">Módulos de Eficiência</a>
+    <ul class="dropdown-menu">
+      <li><a href="#telecom">📡 Telecomunicações</a></li>
+    </ul>
+  </li>
+  
+  <li><a href="#o-que-fazemos">O que fazemos</a></li>
+  <li><a href="#cta" class="nav-cta">Falar com a TRINXS</a></li>
+</ul>
   <button class="nav-burger" onclick="toggleMenu()">☰</button>
 </nav>
 
@@ -777,6 +786,389 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
     font-size: 24px;
   }
 }
+/* ============================================
+   SEÇÃO TELECOM - MÓDULO DE EFICIÊNCIA
+   ============================================ */
+
+#telecom {
+  background: linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#telecom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--g-primary), transparent);
+}
+
+/* Cabeçalho da seção */
+.telecom-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.telecom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--g-primary-dim);
+  border: 1px solid var(--border-medium);
+  border-radius: 40px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--g-primary);
+  margin-bottom: 20px;
+}
+
+.telecom-badge::before {
+  content: '📡';
+  font-size: 12px;
+}
+
+.telecom-title {
+  font-family: var(--ff-heading);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.telecom-title em {
+  font-style: normal;
+  color: var(--g-primary);
+}
+
+.telecom-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid principal */
+.telecom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* CARDS DE SERVIÇOS */
+.telecom-services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: all var(--transition-base);
+}
+
+.service-card:hover {
+  border-color: var(--border-medium);
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--g-primary-dim);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.service-title {
+  font-family: var(--ff-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.service-features {
+  list-style: none;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.service-features li::before {
+  content: '✓';
+  color: var(--g-primary);
+  font-weight: bold;
+}
+
+/* MÉTODO TRINXS TELECOM */
+.telecom-method {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.method-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.method-header h3 {
+  font-family: var(--ff-heading);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.method-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.method-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.method-step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.method-step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--g-primary-dim);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-heading);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--g-primary);
+  flex-shrink: 0;
+}
+
+.step-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* BANNER DE RESULTADOS */
+.telecom-results {
+  margin-top: 48px;
+  background: linear-gradient(135deg, var(--bg-surface-3), var(--bg-surface-2));
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.result-item {
+  text-align: center;
+  flex: 1;
+}
+
+.result-value {
+  font-family: var(--ff-heading);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--g-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.result-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.result-label strong {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+/* CTA da seção */
+.telecom-cta {
+  margin-top: 48px;
+  text-align: center;
+  padding: 32px;
+  background: var(--g-primary-dim);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-medium);
+}
+
+.telecom-cta h4 {
+  font-family: var(--ff-heading);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.telecom-cta p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.telecom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--g-primary);
+  color: var(--bg-dark);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.telecom-btn:hover {
+  background: var(--g-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(103,212,61,0.3);
+}
+
+/* RESPONSIVO */
+@media (max-width: 960px) {
+  .telecom-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .telecom-results {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .result-item {
+    width: 100%;
+  }
+  
+  .method-step {
+    gap: 12px;
+  }
+  
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+/* ============================================
+   SUBMENU - MÓDULOS DE EFICIÊNCIA
+   ============================================ */
+
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-item-dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-item-dropdown > a::after {
+  content: '▼';
+  font-size: 8px;
+  transition: transform 0.2s ease;
+}
+
+.nav-item-dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111608;
+  border: 1px solid rgba(103,212,61,0.15);
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #6E8C60;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #192010;
+  color: #67D43D;
+  padding-left: 24px;
+}
 </style>
 
 <script>
@@ -987,6 +1379,121 @@ function showStep(element, stepIndex) {
 
 <div class="sdiv"></div>
 
+<!-- SEÇÃO TELECOM -->
+<section id="telecom">
+  <div class="container">
+    <div class="telecom-header reveal">
+      <div class="telecom-badge">Módulo de Eficiência</div>
+      <h2 class="telecom-title">Telecom — <em>Inteligência em Contratos e Custos</em></h2>
+      <p class="telecom-subtitle">Mapeamento completo de contratos, faturas e processos de telecomunicações. Identificamos desperdícios, redundâncias e oportunidades de redução de custos.</p>
+    </div>
+
+    <div class="telecom-grid">
+      <!-- Coluna esquerda - Serviços -->
+      <div class="telecom-services">
+        <div class="service-card reveal">
+          <div class="service-icon">📄</div>
+          <h3 class="service-title">Mapeamento de Contratos</h3>
+          <p class="service-desc">Levantamento completo de todos os contratos de telefonia, internet, dados e comunicação da empresa.</p>
+          <ul class="service-features">
+            <li>Inventário contratual completo</li>
+            <li>Análise de cláusulas e vigências</li>
+            <li>Identificação de serviços não utilizados</li>
+            <li>Mapeamento de renovação automática</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">💰</div>
+          <h3 class="service-title">Auditoria de Faturas</h3>
+          <p class="service-desc">Análise detalhada de faturas para identificar cobranças indevidas e oportunidades de economia.</p>
+          <ul class="service-features">
+            <li>Validação de valores cobrados</li>
+            <li>Identificação de taxas indevidas</li>
+            <li>Análise de consumo versus contrato</li>
+            <li>Mapeamento de reajustes abusivos</li>
+          </ul>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">⚙️</div>
+          <h3 class="service-title">Processos e Gargalos</h3>
+          <p class="service-desc">Identificação de ineficiências operacionais nos processos de gestão de telecom.</p>
+          <ul class="service-features">
+            <li>Análise de fluxos de aprovação</li>
+            <li>Mapeamento de responsabilidades</li>
+            <li>Identificação de retrabalhos</li>
+            <li>Otimização de processos</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Coluna direita - Método -->
+      <div class="telecom-method reveal">
+        <div class="method-header">
+          <h3>Método TRINXS Telecom</h3>
+          <p>Como transformamos sua operação de telecom</p>
+        </div>
+        <div class="method-steps">
+          <div class="method-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Diagnóstico</h4>
+              <p>Levantamento completo de contratos, faturas e processos atuais</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Análise</h4>
+              <p>Identificação de desperdícios, gargalos e oportunidades</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Estruturação</h4>
+              <p>Organização dos dados na TRINXS OS para controle centralizado</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Otimização</h4>
+              <p>Renegociação de contratos e correção de processos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="telecom-results reveal">
+      <div class="result-item">
+        <div class="result-value">15-25%</div>
+        <div class="result-label"><strong>Redução média</strong> nos custos de telecom</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value">100%</div>
+        <div class="result-label"><strong>Visibilidade total</strong> dos contratos</div>
+      </div>
+      <div class="result-item">
+        <div class="result-value">30-60d</div>
+        <div class="result-label"><strong>Payback</strong> do investimento</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="telecom-cta reveal">
+      <h4>Comece pelo diagnóstico Telecom</h4>
+      <p>Mapeamos toda sua operação de telecomunicações e entregamos um plano de ação</p>
+      <a href="#contato" class="telecom-btn">Solicitar Diagnóstico Telecom →</a>
+    </div>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
 <!-- CTA -->
 <section id="cta">
   <div class="ctr">
@@ -1020,13 +1527,14 @@ function showStep(element, stepIndex) {
       </div>
     </div>
     <div class="ft-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#diagnostico">Diagnóstico</a>
-      <a href="#metodo">Método</a>
-      <a href="#plataforma">Plataforma</a>
-      <a href="#o-que-fazemos">Serviços</a>
-      <a href="#cta">Contato</a>
-    </div>
+  <a href="#sobre">Sobre</a>
+  <a href="#diagnostico">Diagnóstico</a>
+  <a href="#metodo">Método</a>
+  <a href="#plataforma">Plataforma</a>
+  <a href="#telecom">Módulos de Eficiência</a>
+  <a href="#o-que-fazemos">Serviços</a>
+  <a href="#cta">Contato</a>
+</div>
     <div class="ft-copy">© 2026 TRINXS. Todos os direitos reservados.</div>
   </div>
 </footer>
