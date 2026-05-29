@@ -790,26 +790,19 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
    SEÇÃO TELECOM - MÓDULO DE EFICIÊNCIA
    ============================================ */
 
+/* ============================================
+   MÓDULOS DE EFICIÊNCIA - TELECOM
+   Estilo padronizado com o restante do site
+   ============================================ */
+
 #telecom {
-  background: linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-dark) 100%);
+  background: var(--bg-surface-1);
   position: relative;
-  overflow: hidden;
 }
 
-#telecom::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--g-primary), transparent);
-}
-
-/* Cabeçalho da seção */
 .telecom-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 60px;
 }
 
 .telecom-badge {
@@ -852,19 +845,17 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   line-height: 1.6;
 }
 
-/* Grid principal */
 .telecom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 60px;
   align-items: start;
 }
 
-/* CARDS DE SERVIÇOS */
 .telecom-services {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 24px;
 }
 
 .service-card {
@@ -878,6 +869,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
 .service-card:hover {
   border-color: var(--border-medium);
   transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
 }
 
 .service-icon {
@@ -925,12 +917,13 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   font-weight: bold;
 }
 
-/* MÉTODO TRINXS TELECOM */
 .telecom-method {
   background: var(--bg-surface-2);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   padding: 32px;
+  position: sticky;
+  top: 100px;
 }
 
 .method-header {
@@ -996,18 +989,17 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   line-height: 1.5;
 }
 
-/* BANNER DE RESULTADOS */
 .telecom-results {
-  margin-top: 48px;
-  background: linear-gradient(135deg, var(--bg-surface-3), var(--bg-surface-2));
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-lg);
-  padding: 32px 40px;
+  margin-top: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 40px;
 }
 
 .result-item {
@@ -1017,15 +1009,15 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
 
 .result-value {
   font-family: var(--ff-heading);
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 800;
   color: var(--g-primary);
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .result-label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
 }
 
@@ -1034,11 +1026,10 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   font-weight: 600;
 }
 
-/* CTA da seção */
 .telecom-cta {
-  margin-top: 48px;
+  margin-top: 60px;
   text-align: center;
-  padding: 32px;
+  padding: 40px;
   background: var(--g-primary-dim);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-medium);
@@ -1046,15 +1037,15 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
 
 .telecom-cta h4 {
   font-family: var(--ff-heading);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .telecom-cta p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .telecom-btn {
@@ -1065,7 +1056,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   color: var(--bg-dark);
   font-weight: 700;
   font-size: 14px;
-  padding: 12px 28px;
+  padding: 14px 32px;
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: all var(--transition-base);
@@ -1077,97 +1068,30 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   box-shadow: 0 8px 20px rgba(103,212,61,0.3);
 }
 
-/* RESPONSIVO */
 @media (max-width: 960px) {
   .telecom-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
-  
+  .telecom-method {
+    position: static;
+  }
   .telecom-results {
     flex-direction: column;
     text-align: center;
-    padding: 24px;
+    padding: 32px;
   }
-  
   .result-item {
     width: 100%;
   }
-  
   .method-step {
     gap: 12px;
   }
-  
   .step-number {
     width: 32px;
     height: 32px;
     font-size: 14px;
   }
-}
-/* ============================================
-   SUBMENU - MÓDULOS DE EFICIÊNCIA
-   ============================================ */
-
-.nav-item-dropdown {
-  position: relative;
-}
-
-.nav-item-dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-item-dropdown > a::after {
-  content: '▼';
-  font-size: 8px;
-  transition: transform 0.2s ease;
-}
-
-.nav-item-dropdown:hover > a::after {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #111608;
-  border: 1px solid rgba(103,212,61,0.15);
-  border-radius: 12px;
-  padding: 8px 0;
-  min-width: 200px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.2s ease;
-  z-index: 100;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
-
-.nav-item-dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-menu li {
-  list-style: none;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 13px;
-  color: #6E8C60;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.dropdown-menu a:hover {
-  background: #192010;
-  color: #67D43D;
-  padding-left: 24px;
 }
 </style>
 
