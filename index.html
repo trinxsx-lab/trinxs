@@ -695,6 +695,29 @@ table.tc-t td:first-child{color:#E9EEE9;font-weight:500}
   table.tc-t th,table.tc-t td{padding:12px 14px;font-size:12px}
   .tc-inc{gap:8px}
 }
+
+/* ── RESULTADOS / OFERTA ── */
+#resultados{background:#070B08}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:40px}
+.res-card{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:24px;position:relative;overflow:hidden}
+.res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--g)}
+.res-num{font-family:var(--ff);font-size:13px;font-weight:700;color:var(--g);letter-spacing:.5px;margin-bottom:12px}
+.res-name{font-family:var(--ff);font-size:17px;font-weight:600;margin-bottom:4px;line-height:1.3}
+.res-op{font-size:12px;color:var(--muted);margin-bottom:14px}
+.res-v{font-family:var(--ff);font-size:24px;font-weight:800;color:var(--g);line-height:1.1;margin-bottom:4px}
+.res-tag{font-size:11px;color:var(--g);letter-spacing:.4px;margin-bottom:12px}
+.res-desc{font-size:13.5px;color:var(--muted);line-height:1.7}
+.res-note{font-size:12.5px;color:var(--dim);line-height:1.7;margin-top:32px;max-width:760px}
+#oferta{background:var(--s1)}
+.of-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:start}
+.of-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.of-list li{display:flex;gap:10px;font-size:14px;color:var(--muted);line-height:1.7}
+.of-list li::before{content:'→';color:var(--g);flex-shrink:0}
+.of-box{background:var(--s2);border:1px solid var(--border);border-radius:var(--rl);padding:28px}
+.of-box h3{font-family:var(--ff);font-size:18px;font-weight:600;margin-bottom:12px}
+.of-box p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px}
+@media(max-width:960px){.res-grid{grid-template-columns:1fr}.of-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -1090,6 +1113,55 @@ table.tc-t td:first-child{color:#E9EEE9;font-weight:500}
 </section>
 
 <div class="sdiv"></div>
+
+
+<section id="resultados">
+  <div class="ctr">
+    <div class="eyebrow">Resultados · Telecom</div>
+    <h2 class="sh">O que a equipe já capturou em <em>Telecom</em></h2>
+    <p class="lead">Resultados obtidos pela equipe em operações reais, hoje na TRINXS, em projetos anteriores. Nomes de clientes suprimidos. Valores apresentados por tipo e status, sem somar o que não se soma, e sem garantia de resultado — cada operação tem condições contratuais próprias.</p>
+    <div class="res-grid">
+      <div class="res-card reveal"><div class="res-num">01</div><div class="res-name">Alimentação — Florianópolis/SC</div><div class="res-op">Algar Telecom</div><div class="res-v">R$ 10.555,13</div><div class="res-tag">EM MULTAS ISENTADAS · OBTIDO</div><p class="res-desc">Gestão de obrigações contratuais e multas. Análise contratual e atuação junto à operadora para uma condição comercial mais favorável.</p></div>
+      <div class="res-card reveal"><div class="res-num">02</div><div class="res-name">Agroindústria — Paraná</div><div class="res-op">Telefônica Brasil</div><div class="res-v">R$ 102.228,00</div><div class="res-tag">EM DESCONTO NA AQUISIÇÃO DE APARELHOS · OBTIDO</div><p class="res-desc">Custo de renovação e ampliação de equipamentos. Negociação de condições diferenciadas na aquisição, com economia imediata na contratação.</p></div>
+      <div class="res-card reveal"><div class="res-num">03</div><div class="res-name">Sucroenergético — Minas Gerais</div><div class="res-op">Vivo e Algar Telecom</div><div class="res-v">R$ 29.132,00 / mês</div><div class="res-tag">EM REDUÇÃO RECORRENTE DE CUSTOS</div><p class="res-desc">Contratos e serviços desalinhados com a operação. Renegociação, redução de tarifas, adequação de franquias, links dedicados, M2M, DDR, Microsoft 365 e telefonia móvel.</p></div>
+      <div class="res-card reveal"><div class="res-num">04</div><div class="res-name">Associação de defesa de direitos sociais — Porto Alegre/RS</div><div class="res-op">Vivo</div><div class="res-v">R$ 20.480,00</div><div class="res-tag">RESSARCIDOS · MAIS R$ 30.000,00+ RENEGOCIADOS E CONTESTADOS</div><p class="res-desc">Cobranças fora do contratado. Gestão mensal, auditoria, identificação de inconsistências, contestação de cobrança indevida e acompanhamento até a conclusão.</p></div>
+      <div class="res-card reveal"><div class="res-num">05</div><div class="res-name">Segurança eletrônica — Piauí</div><div class="res-op">Telefonia fixa, móvel e M2M</div><div class="res-v">Rotina estruturada</div><div class="res-tag">GESTÃO, AUDITORIA E NEGOCIAÇÃO · SEM VALOR MONETÁRIO ATRIBUÍDO</div><p class="res-desc">Operação com diferentes tipos de linhas e necessidade recorrente de acompanhamento. Rotina estruturada de auditoria e negociação, com mais controle sobre despesas, serviços e condições comerciais.</p></div>
+      <div class="res-card reveal"><div class="res-num">06</div><div class="res-name">Engenharia — Ceará</div><div class="res-op">Telefônica Brasil</div><div class="res-v">R$ 757.001,04</div><div class="res-tag">SOB CONTESTAÇÃO · EM ANDAMENTO · NÃO RECUPERADO</div><p class="res-desc">Cobranças indevidas retroativas em telefonia móvel. Auditoria, identificação de inconsistências e contestação, com parecer totalmente procedente e processo em andamento.</p></div>
+      <div class="res-card reveal"><div class="res-num">07</div><div class="res-name">Varejo de combustíveis — Florianópolis/SC</div><div class="res-op">TIM, Vivo, Claro e Algar Telecom</div><div class="res-v">Gestão centralizada</div><div class="res-tag">MULTIUNIDADE · SEM VALOR MONETÁRIO ATRIBUÍDO</div><p class="res-desc">Operação distribuída em múltiplas unidades, operadoras, serviços e contratos. Centralização da gestão, negociação de tarifas, auditorias e contestação, com acompanhamento contínuo das condições comerciais.</p></div>
+    </div>
+    <p class="res-note">Resultados divulgados para fins comerciais mediante autorização dos clientes, com nomes suprimidos. Valores têm caráter ilustrativo do potencial de eficiência e não constituem garantia de resultado, pois cada operação possui características contratuais próprias.</p>
+  </div>
+</section>
+
+<div class="sdiv"></div>
+
+<section id="oferta">
+  <div class="ctr">
+    <div class="eyebrow">Oferta · Telecom</div>
+    <h2 class="sh">Diagnóstico e Gestão <em>TRINXS Telecom</em></h2>
+    <p class="lead">Primeiro, identificar onde a operação paga a mais ou sem controle. Depois, negociar, auditar, recuperar e otimizar, com acompanhamento contínuo. O objetivo do modelo é que o serviço se pague: as oportunidades identificadas e capturadas devem compensar o investimento na gestão TRINXS.</p>
+    <div class="of-grid">
+      <ul class="of-list">
+        <li>Levantamento e análise da situação contratual</li>
+        <li>Auditoria de serviços, faturas e cobranças, com identificação de inconsistências</li>
+        <li>Negociação de tarifas e condições comerciais, incluindo equipamentos</li>
+        <li>Contestação e recuperação de valores cobrados indevidamente, inclusive retroativos quando aplicável</li>
+        <li>Adequação de franquias, serviços e soluções à necessidade real da operação</li>
+        <li>Gestão mensal, com acompanhamento das tratativas junto às operadoras</li>
+      </ul>
+      <div class="of-box">
+        <h3>Para quem</h3>
+        <p>Operações com vários contratos e operadoras, a partir de cerca de 30 a 50 colaboradores ou 5 ou mais contratos de Telecom ativos, incluindo operações multiunidade.</p>
+        <h3>Investimento</h3>
+        <p>Definido após o diagnóstico, conforme o escopo da operação.</p>
+        <div class="cta-btns" style="justify-content:flex-start">
+          <a href="#cta" class="btn-p">Solicitar Diagnóstico</a>
+          <a href="https://wa.me/5548988464467" class="btn-s" target="_blank">WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CTA -->
 <section id="cta">
