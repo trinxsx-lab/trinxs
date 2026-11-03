@@ -357,9 +357,9 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   <li><a href="#metodo">Método</a></li>
   <li><a href="#plataforma">Plataforma</a></li>
 <li class="nav-item-dropdown">
-  <a href="#">Módulos de Eficiência</a>
+  <a href="#tc-hero">Módulos de Eficiência</a>
   <ul class="dropdown-menu">
-    <li><a href="#telecom">Telecomunicações</a></li>
+    <li><a href="#tc-hero">Telecomunicações</a></li>
   </ul>
 </li>  <li><a href="#o-que-fazemos">O que fazemos</a></li>
   <li><a href="#cta" class="nav-cta">Falar com a TRINXS</a></li>
@@ -609,7 +609,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
         <div class="os-main">
           <div class="os-mhdr">
             <div class="os-mtitle">Painel Executivo</div>
-            <div class="os-mmeta">Empresa Exemplo · Jun 2026 · <span>Atualizado agora</span></div>
+            <div class="os-mmeta">Painel ilustrativo · Empresa Exemplo · Jun 2026 · <span>Atualizado agora</span></div>
           </div>
           <div class="os-kpis">
             <div class="os-kpi" style="border-color:rgba(99,212,72,.25)"><div class="os-kv" style="color:#63D448">94%</div><div class="os-kl">Eficiência Operacional</div><div class="os-kt" style="color:#86E84A">↑ +12% vs mês anterior</div></div>
@@ -721,7 +721,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   <div class="ctr">
     <div class="eyebrow">Resultado</div>
     <h2 class="sh">O que você ganha com <em>inteligência operacional</em></h2>
-    <p class="lead">Números reais de empresas que passaram pelo processo completo TRINXS — diagnóstico, estruturação e controle contínuo.</p>
+    <p class="lead">Referências típicas observadas em empresas que passaram pelo processo completo TRINXS — diagnóstico, estruturação e controle contínuo. Os valores variam conforme empresa e projeto e não são garantia de resultado.</p>
     <div class="metrics">
       <div class="mc reveal"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 17L15 10L11 14L2 7" stroke="#63D448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17H22V11" stroke="#63D448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-v" style="color:#63D448" data-target="35" data-suffix="%">0%</div><div class="mc-l">Redução de custos operacionais</div><div class="mc-s">após estruturação completa</div></div>
       <div class="mc reveal" style="transition-delay:.08s"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" stroke="#4A9EE8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-v" style="color:#4A9EE8" data-target="40" data-suffix="%">0%</div><div class="mc-l">Ganho de eficiência</div><div class="mc-s">com método D.E.I.C. ativo</div></div>
@@ -758,7 +758,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
       <div class="form-row">
         <input type="text" class="finput" placeholder="Seu nome" id="fn">
         <input type="email" class="finput" placeholder="E-mail corporativo" id="fe">
-        <button class="btn-p" onclick="submitForm()" style="border:none;cursor:pointer">Enviar →</button>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:12px"><input type="checkbox" id="lgpd" style="margin-top:3px">Concordo com o tratamento dos meus dados para retorno de contato, conforme a <a href="privacidade.html" style="color:var(--g)">Política de Privacidade</a>.</label><button class="btn-p" onclick="submitForm()" style="border:none;cursor:pointer">Enviar →</button>
       </div>
       <p style="font-size:12px;color:var(--dim);margin-top:16px">Retorno em até 24h úteis · trinxs.com.br</p>
     </div>
@@ -827,6 +827,7 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 
 /* ── Form ── */
 function submitForm(){
+  if(!document.getElementById('lgpd').checked){alert('Para enviar, aceite a Política de Privacidade.');return}
   const n=document.getElementById('fn').value,e=document.getElementById('fe').value;
   if(!n||!e){alert('Preencha seu nome e e-mail.');return}
   alert('Obrigado, '+n+'! Retornaremos em até 24h para '+e+'.');
@@ -1551,7 +1552,7 @@ table.tc-t td:first-child{color:#E9EEE9;font-weight:500}
       <h2 class="tc-ctah">Uma operação eficiente não convive com um gargalo que <em>ela não enxerga.</em></h2>
       <p class="tc-ctasub">Mapeamos toda sua operação de telecomunicações e entregamos um diagnóstico completo com oportunidades identificadas, estimativa de economia e plano de ação — sem compromisso inicial.</p>
       <div class="tc-ctabtns">
-        <a href="https://www.trinxs.com.br/#contato" class="btn-p">
+        <a href="#cta" class="btn-p">
           <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L14 4V9C14 12.5 11.5 14.5 8 15.5C4.5 14.5 2 12.5 2 9V4L8 1Z" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 8L7.5 10L10.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Solicitar Diagnóstico Telecom
         </a>
@@ -1847,7 +1848,7 @@ function deicClick(el) {
   ">
     Mapeamos toda sua operação de telecomunicações e entregamos um plano de ação com oportunidades reais de economia.
   </p>
-  <a href="#contato" style="
+  <a href="#cta" style="
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -1870,7 +1871,7 @@ function deicClick(el) {
 </div>
 
 <!-- CTA -->
-<section id="cta">
+<section id="cta-final">
   <div class="ctr">
     <div class="cta-box reveal">
       <div class="eyebrow cta-eyebrow">Comece agora</div>
@@ -1884,9 +1885,9 @@ function deicClick(el) {
         <a href="https://wa.me/5548988464467" class="btn-s" target="_blank">WhatsApp →</a>
       </div>
       <div class="form-row">
-        <input type="text" class="finput" placeholder="Seu nome" id="fn">
-        <input type="email" class="finput" placeholder="E-mail corporativo" id="fe">
-        <button class="btn-p" onclick="submitForm()" style="border:none;cursor:pointer">Enviar →</button>
+        <input type="text" class="finput" placeholder="Seu nome" id="fn2">
+        <input type="email" class="finput" placeholder="E-mail corporativo" id="fe2">
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:12px"><input type="checkbox" id="lgpd2" style="margin-top:3px">Concordo com o tratamento dos meus dados para retorno de contato, conforme a <a href="privacidade.html" style="color:var(--g)">Política de Privacidade</a>.</label><button class="btn-p" onclick="submitForm2()" style="border:none;cursor:pointer">Enviar →</button>
       </div>
       <p style="font-size:12px;color:var(--dim);margin-top:16px">Retorno em até 24h úteis · trinxs.com.br</p>
     </div>
@@ -1954,11 +1955,12 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 }));
 
 /* ── Form ── */
-function submitForm(){
-  const n=document.getElementById('fn').value,e=document.getElementById('fe').value;
+function submitForm2(){
+  if(!document.getElementById('lgpd2').checked){alert('Para enviar, aceite a Política de Privacidade.');return}
+  const n=document.getElementById('fn2').value,e=document.getElementById('fe2').value;
   if(!n||!e){alert('Preencha seu nome e e-mail.');return}
   alert('Obrigado, '+n+'! Retornaremos em até 24h para '+e+'.');
-  document.getElementById('fn').value='';document.getElementById('fe').value='';
+  document.getElementById('fn2').value='';document.getElementById('fe2').value='';
 }
 </script>
 </body>
@@ -1981,6 +1983,7 @@ function submitForm(){
       <a href="#plataforma">Plataforma</a>
       <a href="#o-que-fazemos">Serviços</a>
       <a href="#cta">Contato</a>
+      <a href="privacidade.html">Privacidade</a>
     </div>
     <div class="ft-copy">© 2026 TRINXS. Todos os direitos reservados.</div>
   </div>
