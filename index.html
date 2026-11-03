@@ -61,6 +61,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;padding:0 52px;d
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
 .nav-links a{text-decoration:none;font-size:13px;color:var(--muted);padding:7px 15px;border-radius:7px;transition:all .2s;letter-spacing:.2px}
 .nav-links a:hover{color:#E9EEE9;background:var(--s3)}
+.nav-item-dropdown{position:relative}
+.nav-item-dropdown>a::after{content:" \25BE";font-size:11px;color:var(--g)}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;min-width:210px;list-style:none;background:#0C1109;border:1px solid var(--border);border-radius:10px;padding:8px;z-index:300;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.dropdown-menu li{list-style:none}
+.dropdown-menu a{display:block;padding:10px 14px;white-space:nowrap}
+.nav-item-dropdown:hover .dropdown-menu,.nav-item-dropdown:focus-within .dropdown-menu{display:block}
 .nav-cta{background:var(--g)!important;color:#050A04!important;font-weight:600!important;padding:8px 22px!important;border-radius:8px!important;letter-spacing:.3px!important}
 .nav-cta:hover{background:var(--g2)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(99,212,72,.3)!important}
 .nav-burger{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:7px 11px;color:#E9EEE9;cursor:pointer;font-size:17px}
@@ -74,7 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;padding:0 52px;d
 .htag{display:inline-flex;align-items:center;gap:8px;background:var(--s3);border:1px solid var(--bhi);border-radius:20px;padding:6px 16px;font-size:11.5px;color:var(--g);font-weight:500;letter-spacing:.8px;margin-bottom:24px;animation:fadeUp .6s ease both}
 .htag::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;animation:pdot 2s ease-in-out infinite}
 @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
-.hero-h1{font-family:var(--ff);font-size:clamp(44px,5.2vw,72px);font-weight:800;line-height:1.04;letter-spacing:-1.5px;margin-bottom:6px;animation:fadeUp .6s .1s ease both}
+.hero-h1{font-family:var(--ff);font-size:clamp(44px,5.2vw,72px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:6px;animation:fadeUp .6s .1s ease both}
 .hero-h1 em{font-style:normal;color:var(--g)}
 .hero-h1 .dim{color:var(--muted);font-weight:400}
 .hero-lead{font-size:17.5px;font-weight:300;color:var(--muted);line-height:1.7;max-width:480px;margin-bottom:40px;animation:fadeUp .6s .2s ease both}
@@ -321,6 +327,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
 @media(max-width:960px){
   nav{padding:0 24px}
   .nav-links{display:none}
+  .dropdown-menu{position:static;display:block;background:transparent;border:none;box-shadow:none;padding:2px 0 2px 16px;min-width:0}
   .nav-burger{display:flex}
   section{padding:64px 24px}
   #hero{padding:100px 24px 60px}
@@ -348,7 +355,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
 <nav id="nav">
   <a href="#hero" class="nav-logo">
     <div class="nav-logo-wrap">
-<img src="trinxs_logo_v3.svg" alt="TRINXS" class="nav-logo-img" style="height: 148px; width: auto;">    </div>
+<img src="trinxs_logo_v3.svg" alt="TRINXS" class="nav-logo-img" style="height: 32px; width: auto;">    </div>
     <span class="nav-sub">Inteligência Operacional</span>
   </a>
   <ul class="nav-links">
@@ -899,7 +906,7 @@ h2.sh em{font-style:normal;color:var(--g)}
 .tc-htag::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;animation:pdot 2s ease-in-out infinite}
 .tc-module-lbl{font-size:10px;letter-spacing:2.5px;color:var(--dim);text-transform:uppercase;margin-bottom:8px;animation:fadeUp .6s .05s ease both;display:flex;align-items:center;gap:8px}
 .tc-module-lbl::before{content:'';width:18px;height:1px;background:var(--g);opacity:.5}
-.tc-h1{font-family:var(--ff);font-size:clamp(40px,5vw,68px);font-weight:800;line-height:1.04;letter-spacing:-1.5px;margin-bottom:8px;animation:fadeUp .6s .1s ease both}
+.tc-h1{font-family:var(--ff);font-size:clamp(40px,5vw,68px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:8px;animation:fadeUp .6s .1s ease both}
 .tc-h1 em{font-style:normal;color:var(--g)}
 .tc-h1 .tc-dim{color:var(--muted);font-weight:400;font-size:.82em;letter-spacing:-.5px}
 .tc-stmt{font-family:var(--ff);font-size:17px;font-weight:600;color:rgba(233,238,233,.5);line-height:1.4;margin-bottom:18px;animation:fadeUp .6s .15s ease both;border-left:2px solid var(--g);padding-left:16px}
@@ -995,7 +1002,8 @@ h2.sh em{font-style:normal;color:var(--g)}
 .tc-pilar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transition:transform .35s}
 .tc-pilar:hover{background:var(--s2)}
 .tc-pilar:hover::after{transform:scaleX(1)}
-.tc-pbgltr{font-family:var(--ff);font-size:80px;font-weight:800;color:var(--s3);line-height:1;position:absolute;bottom:-10px;right:16px;pointer-events:none;transition:color .3s}
+.tc-pbgltr{font-family:var(--ff);font-size:56px;font-weight:800;color:var(--s3);line-height:1;position:absolute;bottom:8px;right:16px;pointer-events:none;transition:color .3s;z-index:0}
+.tc-pilar h3,.tc-pilar p,.tc-pn{position:relative;z-index:1}
 .tc-pilar:hover .tc-pbgltr{color:rgba(99,212,72,.05)}
 .tc-pn{font-size:11px;font-weight:700;color:var(--g);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;opacity:.7}
 .tc-pilar h3{font-family:var(--ff);font-size:17px;font-weight:600;color:#E9EEE9;margin-bottom:12px;line-height:1.25}
