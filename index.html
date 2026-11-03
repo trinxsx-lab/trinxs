@@ -61,6 +61,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;padding:0 52px;d
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
 .nav-links a{text-decoration:none;font-size:13px;color:var(--muted);padding:7px 15px;border-radius:7px;transition:all .2s;letter-spacing:.2px}
 .nav-links a:hover{color:#E9EEE9;background:var(--s3)}
+.nav-item-dropdown{position:relative}
+.nav-item-dropdown>a::after{content:" \25BE";font-size:11px;color:var(--g)}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;min-width:210px;list-style:none;background:#0C1109;border:1px solid var(--border);border-radius:10px;padding:8px;z-index:300;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.dropdown-menu li{list-style:none}
+.dropdown-menu a{display:block;padding:10px 14px;white-space:nowrap}
+.nav-item-dropdown:hover .dropdown-menu,.nav-item-dropdown:focus-within .dropdown-menu{display:block}
 .nav-cta{background:var(--g)!important;color:#050A04!important;font-weight:600!important;padding:8px 22px!important;border-radius:8px!important;letter-spacing:.3px!important}
 .nav-cta:hover{background:var(--g2)!important;transform:translateY(-1px);box-shadow:0 6px 24px rgba(99,212,72,.3)!important}
 .nav-burger{display:none;background:none;border:1px solid var(--border);border-radius:6px;padding:7px 11px;color:#E9EEE9;cursor:pointer;font-size:17px}
@@ -74,7 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:66px;padding:0 52px;d
 .htag{display:inline-flex;align-items:center;gap:8px;background:var(--s3);border:1px solid var(--bhi);border-radius:20px;padding:6px 16px;font-size:11.5px;color:var(--g);font-weight:500;letter-spacing:.8px;margin-bottom:24px;animation:fadeUp .6s ease both}
 .htag::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;animation:pdot 2s ease-in-out infinite}
 @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
-.hero-h1{font-family:var(--ff);font-size:clamp(44px,5.2vw,72px);font-weight:800;line-height:1.04;letter-spacing:-1.5px;margin-bottom:6px;animation:fadeUp .6s .1s ease both}
+.hero-h1{font-family:var(--ff);font-size:clamp(44px,5.2vw,72px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:6px;animation:fadeUp .6s .1s ease both}
 .hero-h1 em{font-style:normal;color:var(--g)}
 .hero-h1 .dim{color:var(--muted);font-weight:400}
 .hero-lead{font-size:17.5px;font-weight:300;color:var(--muted);line-height:1.7;max-width:480px;margin-bottom:40px;animation:fadeUp .6s .2s ease both}
@@ -321,6 +327,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
 @media(max-width:960px){
   nav{padding:0 24px}
   .nav-links{display:none}
+  .dropdown-menu{position:static;display:block;background:transparent;border:none;box-shadow:none;padding:2px 0 2px 16px;min-width:0}
   .nav-burger{display:flex}
   section{padding:64px 24px}
   #hero{padding:100px 24px 60px}
@@ -348,7 +355,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
 <nav id="nav">
   <a href="#hero" class="nav-logo">
     <div class="nav-logo-wrap">
-<img src="trinxs_logo_v3.svg" alt="TRINXS" class="nav-logo-img" style="height: 148px; width: auto;">    </div>
+<img src="trinxs_logo_v3.svg" alt="TRINXS" class="nav-logo-img" style="height: 32px; width: auto;">    </div>
     <span class="nav-sub">Inteligência Operacional</span>
   </a>
   <ul class="nav-links">
@@ -357,9 +364,9 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   <li><a href="#metodo">Método</a></li>
   <li><a href="#plataforma">Plataforma</a></li>
 <li class="nav-item-dropdown">
-  <a href="#">Módulos de Eficiência</a>
+  <a href="#tc-hero">Módulos de Eficiência</a>
   <ul class="dropdown-menu">
-    <li><a href="#telecom">Telecomunicações</a></li>
+    <li><a href="#tc-hero">Telecomunicações</a></li>
   </ul>
 </li>  <li><a href="#o-que-fazemos">O que fazemos</a></li>
   <li><a href="#cta" class="nav-cta">Falar com a TRINXS</a></li>
@@ -609,7 +616,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
         <div class="os-main">
           <div class="os-mhdr">
             <div class="os-mtitle">Painel Executivo</div>
-            <div class="os-mmeta">Empresa Exemplo · Jun 2026 · <span>Atualizado agora</span></div>
+            <div class="os-mmeta">Painel ilustrativo · Empresa Exemplo · Jun 2026 · <span>Atualizado agora</span></div>
           </div>
           <div class="os-kpis">
             <div class="os-kpi" style="border-color:rgba(99,212,72,.25)"><div class="os-kv" style="color:#63D448">94%</div><div class="os-kl">Eficiência Operacional</div><div class="os-kt" style="color:#86E84A">↑ +12% vs mês anterior</div></div>
@@ -721,7 +728,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
   <div class="ctr">
     <div class="eyebrow">Resultado</div>
     <h2 class="sh">O que você ganha com <em>inteligência operacional</em></h2>
-    <p class="lead">Números reais de empresas que passaram pelo processo completo TRINXS — diagnóstico, estruturação e controle contínuo.</p>
+    <p class="lead">Referências típicas observadas em empresas que passaram pelo processo completo TRINXS — diagnóstico, estruturação e controle contínuo. Os valores variam conforme empresa e projeto e não são garantia de resultado.</p>
     <div class="metrics">
       <div class="mc reveal"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 17L15 10L11 14L2 7" stroke="#63D448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17H22V11" stroke="#63D448" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-v" style="color:#63D448" data-target="35" data-suffix="%">0%</div><div class="mc-l">Redução de custos operacionais</div><div class="mc-s">após estruturação completa</div></div>
       <div class="mc reveal" style="transition-delay:.08s"><div class="mc-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L4.5 13.5H11L10 22L19.5 10.5H13L13 2Z" stroke="#4A9EE8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-v" style="color:#4A9EE8" data-target="40" data-suffix="%">0%</div><div class="mc-l">Ganho de eficiência</div><div class="mc-s">com método D.E.I.C. ativo</div></div>
@@ -758,7 +765,7 @@ footer{background:var(--s3);border-top:1px solid var(--border);padding:42px 52px
       <div class="form-row">
         <input type="text" class="finput" placeholder="Seu nome" id="fn">
         <input type="email" class="finput" placeholder="E-mail corporativo" id="fe">
-        <button class="btn-p" onclick="submitForm()" style="border:none;cursor:pointer">Enviar →</button>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:12px"><input type="checkbox" id="lgpd" style="margin-top:3px">Concordo com o tratamento dos meus dados para retorno de contato, conforme a <a href="privacidade.html" style="color:var(--g)">Política de Privacidade</a>.</label><button class="btn-p" onclick="submitForm()" style="border:none;cursor:pointer">Enviar →</button>
       </div>
       <p style="font-size:12px;color:var(--dim);margin-top:16px">Retorno em até 24h úteis · trinxs.com.br</p>
     </div>
@@ -827,6 +834,7 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 
 /* ── Form ── */
 function submitForm(){
+  if(!document.getElementById('lgpd').checked){alert('Para enviar, aceite a Política de Privacidade.');return}
   const n=document.getElementById('fn').value,e=document.getElementById('fe').value;
   if(!n||!e){alert('Preencha seu nome e e-mail.');return}
   alert('Obrigado, '+n+'! Retornaremos em até 24h para '+e+'.');
@@ -898,7 +906,7 @@ h2.sh em{font-style:normal;color:var(--g)}
 .tc-htag::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;animation:pdot 2s ease-in-out infinite}
 .tc-module-lbl{font-size:10px;letter-spacing:2.5px;color:var(--dim);text-transform:uppercase;margin-bottom:8px;animation:fadeUp .6s .05s ease both;display:flex;align-items:center;gap:8px}
 .tc-module-lbl::before{content:'';width:18px;height:1px;background:var(--g);opacity:.5}
-.tc-h1{font-family:var(--ff);font-size:clamp(40px,5vw,68px);font-weight:800;line-height:1.04;letter-spacing:-1.5px;margin-bottom:8px;animation:fadeUp .6s .1s ease both}
+.tc-h1{font-family:var(--ff);font-size:clamp(40px,5vw,68px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:8px;animation:fadeUp .6s .1s ease both}
 .tc-h1 em{font-style:normal;color:var(--g)}
 .tc-h1 .tc-dim{color:var(--muted);font-weight:400;font-size:.82em;letter-spacing:-.5px}
 .tc-stmt{font-family:var(--ff);font-size:17px;font-weight:600;color:rgba(233,238,233,.5);line-height:1.4;margin-bottom:18px;animation:fadeUp .6s .15s ease both;border-left:2px solid var(--g);padding-left:16px}
@@ -994,7 +1002,8 @@ h2.sh em{font-style:normal;color:var(--g)}
 .tc-pilar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--g);transform:scaleX(0);transition:transform .35s}
 .tc-pilar:hover{background:var(--s2)}
 .tc-pilar:hover::after{transform:scaleX(1)}
-.tc-pbgltr{font-family:var(--ff);font-size:80px;font-weight:800;color:var(--s3);line-height:1;position:absolute;bottom:-10px;right:16px;pointer-events:none;transition:color .3s}
+.tc-pbgltr{font-family:var(--ff);font-size:56px;font-weight:800;color:var(--s3);line-height:1;position:absolute;bottom:8px;right:16px;pointer-events:none;transition:color .3s;z-index:0}
+.tc-pilar h3,.tc-pilar p,.tc-pn{position:relative;z-index:1}
 .tc-pilar:hover .tc-pbgltr{color:rgba(99,212,72,.05)}
 .tc-pn{font-size:11px;font-weight:700;color:var(--g);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;opacity:.7}
 .tc-pilar h3{font-family:var(--ff);font-size:17px;font-weight:600;color:#E9EEE9;margin-bottom:12px;line-height:1.25}
@@ -1551,7 +1560,7 @@ table.tc-t td:first-child{color:#E9EEE9;font-weight:500}
       <h2 class="tc-ctah">Uma operação eficiente não convive com um gargalo que <em>ela não enxerga.</em></h2>
       <p class="tc-ctasub">Mapeamos toda sua operação de telecomunicações e entregamos um diagnóstico completo com oportunidades identificadas, estimativa de economia e plano de ação — sem compromisso inicial.</p>
       <div class="tc-ctabtns">
-        <a href="https://www.trinxs.com.br/#contato" class="btn-p">
+        <a href="#cta" class="btn-p">
           <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L14 4V9C14 12.5 11.5 14.5 8 15.5C4.5 14.5 2 12.5 2 9V4L8 1Z" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 8L7.5 10L10.5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Solicitar Diagnóstico Telecom
         </a>
@@ -1847,7 +1856,7 @@ function deicClick(el) {
   ">
     Mapeamos toda sua operação de telecomunicações e entregamos um plano de ação com oportunidades reais de economia.
   </p>
-  <a href="#contato" style="
+  <a href="#cta" style="
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -1870,7 +1879,7 @@ function deicClick(el) {
 </div>
 
 <!-- CTA -->
-<section id="cta">
+<section id="cta-final">
   <div class="ctr">
     <div class="cta-box reveal">
       <div class="eyebrow cta-eyebrow">Comece agora</div>
@@ -1884,9 +1893,9 @@ function deicClick(el) {
         <a href="https://wa.me/5548988464467" class="btn-s" target="_blank">WhatsApp →</a>
       </div>
       <div class="form-row">
-        <input type="text" class="finput" placeholder="Seu nome" id="fn">
-        <input type="email" class="finput" placeholder="E-mail corporativo" id="fe">
-        <button class="btn-p" onclick="submitForm()" style="border:none;cursor:pointer">Enviar →</button>
+        <input type="text" class="finput" placeholder="Seu nome" id="fn2">
+        <input type="email" class="finput" placeholder="E-mail corporativo" id="fe2">
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:12px"><input type="checkbox" id="lgpd2" style="margin-top:3px">Concordo com o tratamento dos meus dados para retorno de contato, conforme a <a href="privacidade.html" style="color:var(--g)">Política de Privacidade</a>.</label><button class="btn-p" onclick="submitForm2()" style="border:none;cursor:pointer">Enviar →</button>
       </div>
       <p style="font-size:12px;color:var(--dim);margin-top:16px">Retorno em até 24h úteis · trinxs.com.br</p>
     </div>
@@ -1954,11 +1963,12 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 }));
 
 /* ── Form ── */
-function submitForm(){
-  const n=document.getElementById('fn').value,e=document.getElementById('fe').value;
+function submitForm2(){
+  if(!document.getElementById('lgpd2').checked){alert('Para enviar, aceite a Política de Privacidade.');return}
+  const n=document.getElementById('fn2').value,e=document.getElementById('fe2').value;
   if(!n||!e){alert('Preencha seu nome e e-mail.');return}
   alert('Obrigado, '+n+'! Retornaremos em até 24h para '+e+'.');
-  document.getElementById('fn').value='';document.getElementById('fe').value='';
+  document.getElementById('fn2').value='';document.getElementById('fe2').value='';
 }
 </script>
 </body>
@@ -1981,6 +1991,7 @@ function submitForm(){
       <a href="#plataforma">Plataforma</a>
       <a href="#o-que-fazemos">Serviços</a>
       <a href="#cta">Contato</a>
+      <a href="privacidade.html">Privacidade</a>
     </div>
     <div class="ft-copy">© 2026 TRINXS. Todos os direitos reservados.</div>
   </div>
